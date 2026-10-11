@@ -10,51 +10,41 @@ const {
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const isPreview = import.meta.env.PUBLIC_SITE_PREVIEW === 'true';
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script is:inline>document.documentElement.className += ' js';</script>
   <title>{title}</title>
   <meta name="description" content={description} />
+  {isPreview && <meta name="robots" content="noindex, nofollow" />}
   <link rel="canonical" href={canonical} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonical} />
 
-  <!-- Google Analytics (same property as the existing pages) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9RSCHQ4KG"></script>
-  <script is:inline>
+  {!isPreview && <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9RSCHQ4KG"></script>}
+  {!isPreview && <script is:inline>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-L9RSCHQ4KG');
-  </script>
+  </script>}
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <Nav current={current} />
-  <main>
+  <main id="main-content">
     <slot />
   </main>
   <Footer />
 
-  <script is:inline>
-    (function () {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      if (!('IntersectionObserver' in window)) return;
-      const els = document.querySelectorAll('.reveal');
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-      els.forEach((el) => io.observe(el));
-    })();
-  </script>
 </body>
 </html>

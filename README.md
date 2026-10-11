@@ -1,44 +1,26 @@
-# The Common — website (Astro)
+# The Common website preview
 
-Fresh static rebuild of thecommon.io. Code-native (vibe-coded with Claude), edits → static HTML on a CDN.
+This Astro site is a public preview of The Common's proposed simpler website. The existing WordPress site at `thecommon.io` remains live. The approved design and content will be rebuilt in WordPress so Peter can edit it there.
 
-## Run it locally
+## Pages
+
+- Home: routes visitors to desk booking, memberships, meeting rooms, and contact.
+- Day pass & hourly: links to the matching OfficeRnD booking pages.
+- Membership: lists current desk plans and links to OfficeRnD's approval-based request flow.
+- Meeting rooms: links to OfficeRnD room listings; private office and event inquiries go to Contact.
+- About and Contact: short introduction, business details, and the existing HubSpot inquiry form.
+
+Prices, terms, and OfficeRnD booking details can change. Check them against OfficeRnD before using this content in the WordPress rebuild. The HubSpot form fields are configured in HubSpot, not this repository.
+
+## Local preview
+
 ```bash
-cd the-common/site
-npm install
-npm run dev        # http://localhost:4321
-```
-Build for production:
-```bash
-npm run build      # outputs ./dist  → deploy to Cloudflare Pages / Netlify
+npm ci
+npm run dev
 ```
 
-## Structure
-- `src/styles/global.css` — the brand system (monochrome + silver + champagne gold, Fraunces/Jost). One source of truth for all pages.
-- `src/layouts/Base.astro` — `<head>` (fonts, GA, SEO meta, canonical), Nav + Footer, scroll-reveal. Wrap every page in this.
-- `src/components/Nav.astro`, `Footer.astro` — shared, edit once.
-- `src/pages/*.astro` — one file per page (file path = URL).
-- `public/img/` — logos + images (served at `/img/...`).
+`npm run build` creates static files in `dist/`. Every push to `main` publishes a review copy at `https://thecommon-squamish.github.io/thecommon/`. The GitHub Pages workflow adjusts internal paths for that preview and builds with `PUBLIC_SITE_PREVIEW=true` so search engines are asked not to index it and preview visits do not enter the live site's Google Analytics property.
 
-## Pages (Sept 2026)
-- `index.astro` — Home
-- `membership.astro` — Plans, linked to the matching OfficeRnD plan pages
-- `spaces.astro` — Drop-in, meeting rooms, private offices, venue
-- `about.astro`
-- `contact.astro` — HubSpot "Ask us anything" form (same form as the current site)
+The site source lives in `src/pages/`, with shared navigation and footer in `src/components/`, shared styling in `src/styles/global.css`, and images in `public/img/`. Archived experiments are in `_archive/` and are not part of the site.
 
-Parked in `_archive/` (not built): member card page + wallet component (see `_archive/member-card/PARKED-SNIPPETS.md` to restore), events page + entries, journal.
-
-## Preview on GitHub Pages
-Every push to `main` builds and publishes to GitHub Pages via `.github/workflows/pages.yml`. The workflow rewrites root paths to `/thecommon/` because a project Pages site lives under a subpath; the source stays written for the real root domain.
-
-## iCloud note
-This folder is inside iCloud Drive. Dependencies live in `node_modules.nosync/` (iCloud ignores `.nosync` folders) with `node_modules` as a symlink. If a build hangs, run:
-`find . -type f -flags +dataless -not -path './node_modules*' -exec brctl download {} \;`
-
-## Deploy (later)
-1. Push repo to GitHub. 2. Cloudflare Pages → connect repo → build `npm run build`, output `dist`. 3. Test on the `*.pages.dev` URL. 4. SEO cutover: map 301 redirects from old WordPress URLs, migrate metadata, then point DNS (preserve email MX records on CanSpace).
-
-## Notes
-- GA property `G-L9RSCHQ4KG` is wired into `Base.astro` (don't double-add).
-- The homepage events teaser uses a gradient placeholder — drop a real event photo at `public/img/social.jpg` and set it as the `.teaser-img` background.
+Do not point `thecommon.io` to this preview. The WordPress launch will need its own staging review, full backup of the current site, redirects from useful old URLs, and a final check of booking and contact flows.

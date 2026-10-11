@@ -17,13 +17,13 @@ const HUBSPOT_FORM = '845c5505-46d2-4244-a0d2-ef7fb8345de9';
   <section class="section light">
     <div class="wrap contact-grid">
       <!-- details -->
-      <div class="reveal">
+      <div>
         <span class="eyebrow">Where to find us</span>
         <h2 class="serif" style="font-size:clamp(1.8rem,4vw,2.6rem);margin:1rem 0 1.4rem;">Downtown Squamish.</h2>
         <p class="c-row">📍 <span>38016 Cleveland Avenue,<br>Squamish, BC V8B 0A1</span></p>
         <p class="c-row">✉️ <a href="mailto:welcome@thecommon.io">welcome@thecommon.io</a></p>
         <p class="c-row">📞 <a href="tel:+17789060405">(778) 906-0405</a></p>
-        <img class="photo reveal" src="/img/common/photo-6.jpg" alt="The Common storefront on Cleveland Avenue" loading="lazy" style="margin-top:1.8rem;" />
+        <img class="photo" src="/img/common/photo-6.jpg" alt="The Common storefront on Cleveland Avenue" loading="lazy" style="margin-top:1.8rem;" />
         <div class="socials">
           <a href="https://www.instagram.com/thecommon.io/" target="_blank" rel="noopener noreferrer">Instagram</a>
           <a href="https://www.facebook.com/thecommon.io/" target="_blank" rel="noopener noreferrer">Facebook</a>
@@ -32,10 +32,10 @@ const HUBSPOT_FORM = '845c5505-46d2-4244-a0d2-ef7fb8345de9';
       </div>
 
       <!-- form -->
-      <div class="form-card reveal">
+      <div class="form-card">
         <h3 class="serif">Ask us anything.</h3>
+        <p class="form-intro">Have a quick question? <a href="mailto:welcome@thecommon.io">Email us directly</a>, or use the form below.</p>
         <div class="hbspt-form" id="hubspot-contact-form"></div>
-        <p class="form-note">Prefer email? <a href="mailto:welcome@thecommon.io">welcome@thecommon.io</a></p>
         <script is:inline src="https://js.hsforms.net/forms/embed/v2.js"></script>
         <script is:inline define:vars={{ HUBSPOT_PORTAL, HUBSPOT_FORM }}>
           window.hsFormsOnReady = window.hsFormsOnReady || [];
@@ -59,15 +59,6 @@ const HUBSPOT_FORM = '845c5505-46d2-4244-a0d2-ef7fb8345de9';
 
   .form-card { background: var(--white); border: 1px solid var(--line); border-radius: 20px; padding: 2.2rem; box-shadow: 0 18px 44px -28px rgba(28,25,23,0.4); }
   .form-card h3 { font-size: 1.5rem; margin-bottom: 1.4rem; }
-  form label { display: block; font-size: 0.82rem; font-weight: 500; color: var(--stone); margin-bottom: 1rem; }
-  form input, form textarea { width: 100%; margin-top: 0.4rem; padding: 0.8rem 0.9rem; border: 1px solid var(--line); border-radius: 10px; font-family: var(--sans); font-size: 0.95rem; font-weight: 300; color: var(--ink); background: var(--paper); transition: border-color 0.2s; }
-  form input:focus, form textarea:focus { outline: none; border-color: var(--gold); }
-  .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  fieldset { border: 0; padding: 0; margin: 0 0 1rem; }
-  legend { font-size: 0.82rem; font-weight: 500; color: var(--stone); margin-bottom: 0.5rem; }
-  .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 1rem; }
-  .chk { display: flex; align-items: center; gap: 0.5rem; font-weight: 300; font-size: 0.9rem; color: var(--stone); margin: 0; }
-  .chk input { width: auto; margin: 0; }
-  .form-note { font-size: 0.85rem; color: var(--stone-soft); margin-top: 1rem; text-align: center; }
-  .form-note a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+  .form-intro { color: var(--stone); margin: -0.5rem 0 1.4rem; }
+  .form-intro a { text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
 </style>
