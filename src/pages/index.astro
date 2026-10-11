@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 ---
 <Base current="home" title="The Common — Coworking in Squamish" description="Book a day pass or hourly desk, explore memberships, and work from The Common in downtown Squamish.">
   <header class="hero">
-    <img class="hero-img" src="/img/common/photo-1.jpg" alt="Coworking space inside The Common in Squamish" />
+    <img class="hero-img" src="/img/common/hero-working.jpg" alt="People working at desks inside The Common in Squamish" width="1844" height="853" fetchpriority="high" />
     <div class="hero-scrim" aria-hidden="true"></div>
     <div class="wrap hero-content">
       <span class="eyebrow on-dark">Coworking in downtown Squamish</span>
@@ -91,5 +91,5 @@ import Base from '../layouts/Base.astro';
   .about-strip p, .contact-strip p { color: var(--stone); font-size: 1.08rem; margin-bottom: 1.3rem; }
   .contact-strip { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
   .contact-actions { display: flex; align-items: center; gap: 1.3rem; flex-wrap: wrap; }
-  @media (max-width: 760px) { .choices, .about-strip { grid-template-columns: 1fr; } .contact-strip { align-items: flex-start; flex-direction: column; } }
+  @media (max-width: 760px) { .hero-img { object-position: 68% center; } .choices, .about-strip { grid-template-columns: 1fr; } .contact-strip { align-items: flex-start; flex-direction: column; } }
 </style>
