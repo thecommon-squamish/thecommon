@@ -1,13 +1,11 @@
 ---
 const { current = '' } = Astro.props;
 const links = [
-  { href: '/',            label: 'Home',       key: 'home' },
+  { href: '/day-pass/', label: 'Day pass & hourly', key: 'day-pass' },
   { href: '/membership/', label: 'Membership', key: 'membership' },
-  { href: '/spaces/',     label: 'Spaces',     key: 'spaces' },
-  { href: '/about/',      label: 'About',      key: 'about' },
-  { href: '/contact/',    label: 'Contact',    key: 'contact' },
+  { href: '/spaces/', label: 'Meeting rooms', key: 'spaces' },
+  { href: '/contact/', label: 'Contact', key: 'contact' },
 ];
-const OFFICERND = 'https://e-commerce.officernd.com/thecommon/search-results?type=hotdesk&listingType=plan';
 ---
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
@@ -19,6 +17,15 @@ const OFFICERND = 'https://e-commerce.officernd.com/thecommon/search-results?typ
         <li><a href={l.href} aria-current={current === l.key ? 'page' : undefined}>{l.label}</a></li>
       ))}
     </ul>
-    <a class="nav-cta" href={OFFICERND} target="_blank" rel="noopener noreferrer">Become a Member</a>
+    <a class="nav-cta" href="/day-pass/">Book a desk</a>
+    <details class="mobile-menu">
+      <summary>Menu</summary>
+      <ul>
+        {links.map((l) => (
+          <li><a href={l.href} aria-label={l.label} aria-current={current === l.key ? 'page' : undefined}>{l.label}</a></li>
+        ))}
+        <li><a href="/about/" aria-label="About The Common">About The Common</a></li>
+      </ul>
+    </details>
   </div>
 </nav>

@@ -1,102 +1,45 @@
 ---
 import Base from '../layouts/Base.astro';
-const OFFICERND = 'https://e-commerce.officernd.com/thecommon/search-results?type=hotdesk&listingType=plan';
-const BOOK = 'https://e-commerce.officernd.com/thecommon/search-results?type=meeting_room&listingType=resource';
 
-const dropins = [
-  { name: 'Drop-In Desk', price: '$6.50/hr', note: 'Pay by the hour. Free coffee, monitor, desk.' , href: 'https://e-commerce.officernd.com/thecommon/search-results?type=offices&listingType=resource' },
-  { name: 'Single Day Pass', price: '$37', note: 'Full day + 2 hrs meeting-room credit.' , href: 'https://e-commerce.officernd.com/thecommon/plans/685a4f6beefbc2e8fa8b62f4' },
-  { name: '1× Week Pass', price: '$175', note: '5 consecutive days + meeting credits.' , href: 'https://e-commerce.officernd.com/thecommon/plans/685a4f6beefbc2e8fa8b62ff' },
-  { name: '10× Day Passes', price: '$325', note: 'For visitors — valid 3 months.' , href: 'https://e-commerce.officernd.com/thecommon/plans/685a4f6beefbc2e8fa8b62f7' },
-];
-const rooms = [
-  { name: 'Phone Booth', cap: '3 · 65 ft²', rate: '$18/hr' },
-  { name: 'Micro Office (Container)', cap: '1 · 40 ft²', rate: '$18/hr' },
-  { name: 'Small Conference', cap: '6 · 112 ft²', rate: '$30/hr' },
-  { name: 'Large Conference Room', cap: '12 · 300 ft²', rate: '$50/hr' },
-  { name: 'The Common Room (venue)', cap: 'up to 80', rate: '$120/hr' },
-];
-const offices = [
-  { name: 'Micro Office', price: '695', bullets: ['Private 1-person office in the garden', '24/7 keycard access', 'Bookable by the day too'] },
-  { name: '1-Person Office', price: '795', bullets: ['Your own office with a key', '24/7 access, your hours', 'All amenities included'] },
-  { name: 'Team Office (2–4)', price: '1,650', bullets: ['Private office for a small team', 'HDTV + whiteboard', '24/7 access'] },
-];
+const ROOMS = 'https://e-commerce.officernd.com/thecommon/search-results?type=meeting_room&listingType=resource';
 ---
-<Base current="spaces" title="Spaces — The Common Squamish" description="Drop-in desks, phone booths, meeting rooms, private offices, and a 50-seat venue in downtown Squamish. Book by the hour, day, or month.">
+<Base current="spaces" title="Meeting rooms — The Common Squamish" description="Find and book meeting rooms at The Common in downtown Squamish.">
   <header class="page-hd">
     <div class="mesh" aria-hidden="true"></div>
     <div class="wrap">
-      <span class="eyebrow on-dark">The spaces</span>
-      <h1>Room for every kind of <em class="shimmer">work</em>.</h1>
-      <p>A desk for the day, a booth for the call, a room for the team, or a venue for the night. Book what you need, when you need it.</p>
+      <span class="eyebrow on-dark">Meeting rooms</span>
+      <h1>Room to <em class="shimmer">get together</em>.</h1>
+      <p>Need a quiet space for a call or a room for a group? See available rooms and book online.</p>
     </div>
   </header>
 
-  <!-- DROP IN -->
-  <section class="section light" id="dropin">
-    <div class="wrap">
-      <div class="section-head"><span class="eyebrow">Drop in</span><h2>No membership? <em>No problem.</em></h2><p>Rent a desk by the hour or day. Day-pass users get the same access as members.</p></div>
-      <div class="cards">
-        {dropins.map((d) => (
-          <div class="card reveal">
-            <h3>{d.name}</h3>
-            <div class="price"><span class="amt">{d.price}</span></div>
-            <ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> {d.note}</li></ul>
-            <a class="card-cta" href={d.href} target="_blank" rel="noopener noreferrer">Book →</a>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- MEETING ROOMS -->
-  <section class="section warm" id="rooms">
+  <section class="section light" id="rooms">
     <div class="wrap split">
-      <div class="reveal">
-        <span class="eyebrow">Meeting rooms</span>
-        <h2 class="serif" style="font-size:clamp(2rem,4.5vw,3rem);line-height:1.08;margin:1.1rem 0 1.2rem;">Somewhere to <em style="font-style:italic;color:var(--gold);">take the call</em>.</h2>
-        <p style="color:var(--stone);font-weight:300;margin-bottom:1.6rem;">Phone booths for calls, conference rooms for the team, and a full venue for events. Members book with included credits; everyone can book by the hour.</p>
-        <table class="rates">
-          <thead><tr><th>Room</th><th>Capacity</th><th>Rate</th></tr></thead>
-          <tbody>
-            {rooms.map((r) => <tr><td class="rate-name">{r.name}</td><td>{r.cap}</td><td>{r.rate}</td></tr>)}
-          </tbody>
-        </table>
-        <div style="margin-top:1.6rem;"><a href={BOOK} class="btn btn-ink" target="_blank" rel="noopener noreferrer">Reserve a room →</a></div>
+      <div>
+        <span class="eyebrow">Reserve a room</span>
+        <h2 class="section-title">Choose a room and time.</h2>
+        <p class="intro">The booking system shows current availability and prices. Select what you need and complete your booking online.</p>
+        <a class="btn btn-ink" href={ROOMS} target="_blank" rel="noopener noreferrer">See available rooms →</a>
       </div>
-      <img class="photo reveal" src="/img/common/photo-13.jpg" alt="Meeting and desk space at The Common" loading="lazy" />
+      <img class="photo" src="/img/common/photo-13.jpg" alt="Meeting area inside The Common" loading="lazy" />
     </div>
   </section>
 
-  <!-- PRIVATE OFFICES -->
-  <section class="section light" id="offices">
-    <div class="wrap">
-      <div class="section-head"><span class="eyebrow">Private offices</span><h2>A space of your <em>own</em>.</h2><p>Private offices for 1–4 people, rentable by the hour, day, or month.</p></div>
-      <div class="cards">
-        {offices.map((o) => (
-          <div class="card reveal">
-            <span class="flag">Private</span>
-            <h3>{o.name}</h3>
-            <div class="price"><span class="amt">from ${o.price}</span><span class="per">/mo</span></div>
-            <ul>{o.bullets.map((b) => <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> {b}</li>)}</ul>
-            <a class="card-cta" href="/contact/">Inquire →</a>
-          </div>
-        ))}
+  <section class="section warm" id="offices">
+    <div class="wrap other-options">
+      <div>
+        <span class="eyebrow">Private offices and events</span>
+        <h2 class="section-title">Need a different space?</h2>
+        <p>Contact us about a private office or hosting an event.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- VENUE -->
-  <section class="section dark">
-    <div class="mesh" aria-hidden="true"></div>
-    <div class="wrap split" style="position:relative;z-index:2;">
-      <img class="photo reveal" src="/img/common/photo-10.jpg" alt="The Common event space set up for a gathering" loading="lazy" />
-      <div class="reveal">
-        <span class="eyebrow on-dark">Venue rental</span>
-        <h2 style="font-size:clamp(2rem,4.5vw,3rem);line-height:1.08;margin:1.1rem 0 1.2rem;color:#fff;">Host your <em class="shimmer">thing</em>.</h2>
-        <p style="color:rgba(255,255,255,0.78);font-weight:300;margin-bottom:1.6rem;">A training session, a non-profit meeting, a workshop, a movie night on the 120" projector with surround sound, or a party for up to 50. We have a space for that.</p>
-        <a href="/contact/" class="btn btn-gold">Enquire about the venue →</a>
-      </div>
+      <a class="btn btn-outline" href="/contact/">Contact us →</a>
     </div>
   </section>
 </Base>
+
+<style>
+  .section-title { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 1rem 0; }
+  .intro, .other-options p { color: var(--stone); font-size: 1.08rem; margin-bottom: 1.6rem; }
+  .other-options { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  @media (max-width: 700px) { .other-options { align-items: flex-start; flex-direction: column; } }
+</style>

@@ -1,120 +1,81 @@
 ---
 import Base from '../layouts/Base.astro';
-const OFFICERND = 'https://e-commerce.officernd.com/thecommon/search-results?type=hotdesk&listingType=plan';
 
+const MEMBERSHIPS = 'https://e-commerce.officernd.com/thecommon/search-results?type=hotdesk&listingType=plan';
 const plans = [
-  { flag: 'Part-time', name: 'Flexi', price: '195', per: '/mo', bullets: ['6, 10 or 15 days a month', '24/7 keycard access', 'Meeting-room credits included', 'Free drop-ins + half-day splits'], cta: 'See Flexi plans', href: OFFICERND },
-  { flag: 'Full access', name: '24/7 Full-Time', price: '495', per: '/mo', bullets: ['Unlimited access, any time', 'Your base, every day', 'Meeting-room credits included', 'Add a dedicated desk +$100/mo'], cta: 'Go full-time', href: 'https://e-commerce.officernd.com/thecommon/plans/685a4f6aeefbc2e8fa8b62c8' },
-  { flag: 'Private', name: 'Private Office', price: '695', per: '/mo', bullets: ['Your own office, 1–4 people', 'By the day or month', 'Lockable, 24/7 access', 'All amenities included'], cta: 'See offices', href: 'https://e-commerce.officernd.com/thecommon/search-results?type=desk&listingType=resource' },
-  { flag: 'Mailing', name: 'Virtual', price: '50', per: '/mo', bullets: ['A Squamish business address', 'We hold your mail', 'Events + community access', 'Required to register a BC business'], cta: 'Get an address', href: 'https://e-commerce.officernd.com/thecommon/plans/685a4f6aeefbc2e8fa8b62b0' },
+  { days: '6 days / month', price: '$195', name: 'Flexi' },
+  { days: '10 days / month', price: '$295', name: 'Flexi' },
+  { days: '15 days / month', price: '$395', name: 'Flexi' },
+  { days: 'Every day', price: '$495', name: 'Full-time' },
 ];
-
-const includes = [
-  { t: '24/7 member access', icon: 'clock' },
-  { t: 'A monitor at every desk', icon: 'monitor' },
-  { t: 'Fast fibre wifi', icon: 'wifi' },
-  { t: 'Free tea & Counterpart coffee', icon: 'coffee' },
-  { t: 'Garden + BBQ', icon: 'sun' },
-  { t: 'Weekly socials', icon: 'users' },
-  { t: 'A buzzing community chat', icon: 'chat' },
-  { t: 'Dogs welcome', icon: 'paw' },
-  { t: 'Access to member benefits', icon: 'calendar' },
-];
-
-
-const ICONS = {
-  clock: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
-  monitor: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',
-  wifi: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>',
-  coffee: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>',
-  sun: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
-  users: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
-  chat: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>',
-  paw: '<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="6" cy="11" rx="1.7" ry="2.3"/><ellipse cx="10" cy="7.5" rx="1.7" ry="2.3"/><ellipse cx="14" cy="7.5" rx="1.7" ry="2.3"/><ellipse cx="18" cy="11" rx="1.7" ry="2.3"/><path d="M12 12c-2.6 0-4.8 1.9-5.4 4.3-.4 1.7 1 3.2 2.7 3.2.9 0 1.8-.4 2.7-.4s1.8.4 2.7.4c1.7 0 3.1-1.5 2.7-3.2C16.8 13.9 14.6 12 12 12z"/></svg>',
-  calendar: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
-};
-const icon = (k) => ICONS[k] || '';
 ---
-<Base current="membership" title="Membership — The Common Squamish" description="Flexible coworking memberships in Squamish — part-time Flexi, full-time, private offices, and virtual mailing. Community and perks come with every plan.">
+<Base current="membership" title="Coworking memberships — The Common Squamish" description="Choose a flexible or full-time coworking membership at The Common in downtown Squamish.">
   <header class="page-hd">
     <div class="mesh" aria-hidden="true"></div>
     <div class="wrap">
       <span class="eyebrow on-dark">Membership</span>
-      <h1>Find your <em class="shimmer">fit</em>.</h1>
-      <p>From a day or two a week to a private office of your own — every membership comes with the same thing: the community and the perks. Become a regular, or just drop in for an hour.</p>
+      <h1>Make this your <em class="shimmer">workspace</em>.</h1>
+      <p>Choose how often you want to work at The Common.</p>
     </div>
   </header>
 
   <section class="section light">
     <div class="wrap">
-      <div class="cards">
-        {plans.map((p) => (
-          <div class="card reveal">
-            <span class="flag">{p.flag}</span>
-            <h3>{p.name}</h3>
-            <div class="price"><span class="amt">{p.price === '50' ? '$50' : `from $${p.price}`}</span><span class="per">{p.per}</span></div>
-            <ul>{p.bullets.map((b) => <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> {b}</li>)}</ul>
-            <a class="card-cta" href={p.href} target="_blank" rel="noopener noreferrer">{p.cta} →</a>
+      <div class="plan-heading">
+        <h2>Monthly desk plans</h2>
+        <p>Pick the number of days that fits your schedule.</p>
+      </div>
+      <div class="plan-list">
+        {plans.map((plan) => (
+          <div class="plan-row">
+            <div><span class="plan-name">{plan.name}</span><h3>{plan.days}</h3></div>
+            <p>{plan.price}<span> / month</span></p>
           </div>
         ))}
       </div>
-      <div style="text-align:center;margin-top:2.6rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href={OFFICERND} class="btn btn-gold" target="_blank" rel="noopener noreferrer">Browse plans &amp; join</a>
-        <a href="/spaces/#dropin" class="btn btn-outline">Just visiting? Drop in →</a>
-      </div>
-      <p style="text-align:center;margin-top:1.4rem;color:var(--stone-soft);font-size:0.95rem;">New to town? <a href="/contact/" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Try a free Locals day</a> — zero pressure, the only catch is you say hello.</p>
+      <a class="btn btn-ink plan-action" href={MEMBERSHIPS} target="_blank" rel="noopener noreferrer">View plans in booking system →</a>
+      <p class="plan-note">You’ll choose your plan in The Common’s booking system.</p>
     </div>
   </section>
 
-  <!-- INCLUDED — prominent perks -->
   <section class="section warm">
-    <div class="wrap">
-      <div class="perk-hd reveal">
-        <span class="eyebrow" style="justify-content:center;">Every membership includes</span>
-        <h2 class="serif">It's so much <em>more than a desk</em>.</h2>
-        <p>The same things come with every plan — because what you're really joining is the community. This is what your membership gets you, every single day.</p>
+    <div class="wrap other-options">
+      <div>
+        <span class="eyebrow">Other ways to work here</span>
+        <h2>Need something different?</h2>
+        <p>Ask us about private offices or a virtual business address.</p>
       </div>
-      <div class="perk-grid">
-        {includes.map((a) => (
-          <div class="perk-card reveal">
-            <span class="perk-i" aria-hidden="true" set:html={icon(a.icon)} />
-            <span class="perk-t">{a.t}</span>
-          </div>
-        ))}
-      </div>
-      <p class="perk-foot reveal">…and a community that makes the workday better.</p>
+      <a class="btn btn-outline" href="/contact/">Contact us →</a>
     </div>
   </section>
 
-  <!-- CLOSING CTA -->
-  <section class="section dark">
-    <div class="mesh" aria-hidden="true"></div>
-    <div class="wrap" style="position:relative;z-index:2;max-width:680px;text-align:center;">
-      <span class="eyebrow on-dark" style="justify-content:center;">Join the community</span>
-      <h2 style="font-size:clamp(2rem,4.5vw,3rem);color:#fff;margin:1.1rem 0;">Your desk is <em class="shimmer">waiting</em>.</h2>
-      <p style="color:rgba(255,255,255,0.74);font-weight:300;margin:0 auto 2rem;max-width:480px;">Pick a plan and you're in today — or come try a free Locals day first and see if it's your kind of room.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href={OFFICERND} class="btn btn-gold" target="_blank" rel="noopener noreferrer">Browse plans &amp; join</a>
-        <a href="https://e-commerce.officernd.com/thecommon/plans/685a4f6aeefbc2e8fa8b628c" class="btn btn-glass" target="_blank" rel="noopener noreferrer">Book a free Locals visit</a>
+  <section class="section light">
+    <div class="wrap other-options">
+      <div>
+        <span class="eyebrow">Try us first</span>
+        <h2>Just visiting?</h2>
+        <p>Book a desk for a day or a few hours. No membership needed.</p>
       </div>
+      <a class="btn btn-outline" href="/day-pass/">See desk options →</a>
     </div>
   </section>
 </Base>
 
 <style>
-  /* prominent perks */
-  .perk-hd { text-align: center; max-width: 620px; margin: 0 auto 3rem; }
-  .perk-hd h2 { font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.08; margin: 1rem 0 0.9rem; }
-  .perk-hd h2 em { font-style: italic; color: var(--gold); }
-  .perk-hd p { color: var(--stone); font-weight: 300; font-size: 1.1rem; line-height: 1.7; margin: 0 auto; }
-  .perk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-  @media (max-width: 760px) { .perk-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 460px) { .perk-grid { grid-template-columns: 1fr; } }
-  .perk-card { display: flex; align-items: center; gap: 1rem; background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 1.1rem 1.3rem; transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s; }
-  .perk-card:hover { transform: translateY(-3px); border-color: var(--gold); box-shadow: 0 16px 34px -24px rgba(28,25,23,0.4); }
-  .perk-i { display: inline-flex; flex-shrink: 0; width: 46px; height: 46px; border-radius: 12px; background: var(--paper-warm); align-items: center; justify-content: center; color: var(--gold); }
-  .perk-t { font-size: 1rem; font-weight: 400; color: var(--ink); line-height: 1.3; }
-  .perk-foot { text-align: center; margin-top: 2.4rem; color: var(--stone); font-weight: 300; }
-  .perk-foot a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
-
+  .plan-heading { text-align: center; margin: 0 auto 2.2rem; }
+  .plan-heading h2, .other-options h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; }
+  .plan-heading p, .other-options p { font-size: 1.08rem; color: var(--stone); margin-top: 0.8rem; }
+  .plan-list { max-width: 760px; margin: 0 auto 2rem; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--white); }
+  .plan-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.3rem 1.6rem; }
+  .plan-row + .plan-row { border-top: 1px solid var(--line); }
+  .plan-name { display: block; font-size: 0.72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; }
+  .plan-row h3 { font-size: 1.35rem; line-height: 1.2; }
+  .plan-row p { flex: none; font-family: var(--serif); font-size: 1.4rem; }
+  .plan-row p span { font-family: var(--sans); font-size: 0.85rem; color: var(--stone-soft); }
+  .plan-action { display: flex; width: fit-content; max-width: 100%; margin: 0 auto; white-space: normal; text-align: center; }
+  .plan-note { text-align: center; margin-top: 0.9rem; color: var(--stone-soft); font-size: 0.9rem; }
+  .other-options { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .other-options h2 { margin-top: 0.8rem; }
+  @media (max-width: 700px) { .other-options { align-items: flex-start; flex-direction: column; } }
+  @media (max-width: 420px) { .plan-row { align-items: flex-start; flex-direction: column; gap: 0.5rem; } }
 </style>

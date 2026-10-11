@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+
+const DAY_PASS = 'https://e-commerce.officernd.com/thecommon/plans/685a4f6beefbc2e8fa8b62f4';
+const HOURLY_DESK = 'https://e-commerce.officernd.com/thecommon/search-results?type=offices&listingType=resource';
+---
+<Base current="day-pass" title="Book a desk — The Common Squamish" description="Book a coworking desk in Squamish. Choose a $37 day pass or an hourly desk from $6.50 per hour.">
+  <header class="page-hd">
+    <div class="mesh" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="eyebrow on-dark">Work here today</span>
+      <h1>Book a <em class="shimmer">desk</em>.</h1>
+      <p>Pick the time that works for you. No membership needed.</p>
+    </div>
+  </header>
+
+  <section class="section light">
+    <div class="wrap">
+      <div class="booking-grid">
+        <article class="booking-card">
+          <span class="eyebrow">Stay for the day</span>
+          <h2>Day pass</h2>
+          <p class="price">$37 <span>/ day, plus tax</span></p>
+          <p>A full workday at The Common. Choose your start date and pay online.</p>
+          <a class="btn btn-ink" href={DAY_PASS} target="_blank" rel="noopener noreferrer">Buy a day pass →</a>
+        </article>
+        <article class="booking-card">
+          <span class="eyebrow">Just need a few hours?</span>
+          <h2>Hourly desk</h2>
+          <p class="price">$6.50 <span>/ hour, plus tax</span></p>
+          <p>Choose a date and time, then book your desk online.</p>
+          <a class="btn btn-ink" href={HOURLY_DESK} target="_blank" rel="noopener noreferrer">Book an hourly desk →</a>
+        </article>
+      </div>
+      <p class="help">The checkout opens in The Common’s booking system. Questions? <a href="/contact/">Contact us</a>.</p>
+    </div>
+  </section>
+
+  <section class="section warm">
+    <div class="wrap next-step">
+      <div>
+        <span class="eyebrow">Coming back often?</span>
+        <h2>See monthly memberships.</h2>
+        <p>If you'll use a desk regularly, a membership may be a better fit.</p>
+      </div>
+      <a class="btn btn-outline" href="/membership/">View memberships →</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .booking-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+  .booking-card { display: flex; flex-direction: column; align-items: flex-start; background: var(--white); border: 1px solid var(--line); border-radius: 22px; padding: clamp(1.6rem, 4vw, 3rem); }
+  .booking-card h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 1rem 0; }
+  .booking-card p:not(.price) { font-size: 1.05rem; color: var(--stone); margin-bottom: 2rem; }
+  .booking-card .price { font-family: var(--serif); font-size: 2rem; line-height: 1.2; margin-bottom: 0.9rem; }
+  .booking-card .price span { font-family: var(--sans); font-size: 0.95rem; color: var(--stone-soft); }
+  .booking-card .btn { margin-top: auto; white-space: normal; text-align: center; }
+  .help { text-align: center; margin-top: 1.8rem; color: var(--stone); }
+  .help a { text-decoration: underline; text-underline-offset: 3px; }
+  .next-step { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .next-step h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0.7rem 0; }
+  .next-step p { color: var(--stone); }
+  @media (max-width: 760px) { .booking-grid { grid-template-columns: 1fr; } .next-step { align-items: flex-start; flex-direction: column; } }
+</style>

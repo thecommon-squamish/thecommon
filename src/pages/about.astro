@@ -1,79 +1,35 @@
 ---
 import Base from '../layouts/Base.astro';
-const VIDEO_URL = 'https://www.youtube.com/watch?v=NePHctJ9Hq0';
-const programmes = [
-  { name: 'Common Capital', d: 'Our social-capital programme for individuals and companies who want to give back to the community.' },
-  { name: 'Community Grant', d: 'Support for community groups working on innovation — tech, AI, outdoor-rec tech, and the green economy.' },
-  { name: 'Venue Sponsorship', d: 'Free and discounted venue use for non-profits and charities doing good in the Sea-to-Sky.' },
-];
 ---
-<Base current="about" title="About — The Common Squamish" description="The Common is not a coffee shop, and not just a coworking space. We're a place to connect — Squamish's community and innovation hub since 2017.">
+<Base current="about" title="About The Common — Coworking in Squamish" description="Get to know The Common, a welcoming coworking space in downtown Squamish.">
   <header class="page-hd">
     <div class="mesh" aria-hidden="true"></div>
     <div class="wrap">
-      <span class="eyebrow on-dark">About</span>
-      <h1>Find your <em class="shimmer">focus</em>.</h1>
-      <p>The Common is not a coffee shop, and we're not just a coworking space. We're a place to connect people — your tribe. Our mission is to create connections between the people who work here.</p>
+      <span class="eyebrow on-dark">About The Common</span>
+      <h1>Space to work. <em class="shimmer">People to meet.</em></h1>
+      <p>The Common is a coworking space in downtown Squamish. Come to focus, stay to connect.</p>
     </div>
   </header>
 
-  <!-- STORY -->
   <section class="section light">
     <div class="wrap split">
-      <div class="reveal">
-        <span class="eyebrow">Your tribe · the people</span>
-        <h2 class="serif" style="font-size:clamp(2rem,4.5vw,3rem);line-height:1.08;margin:1.1rem 0 1.2rem;">Home to people <em style="font-style:italic;color:var(--gold);">building things</em>.</h2>
-        <p style="color:var(--stone);font-weight:300;font-size:1.08rem;margin-bottom:1.2rem;">The Common is home to a group of open-minded, forward-thinking, and hard-working entrepreneurs, technology start-ups, and inspiring business people. Our focus is the individual.</p>
-        <p style="color:var(--stone);font-weight:300;font-size:1.08rem;margin-bottom:1.2rem;">We attract people from large companies, small teams, startups, and high-growth businesses — a strong community of like-minded, talented coders, CTOs, lawyers, geospatial engineers, PhD students, green-tech innovators, and highly driven entrepreneurs. The talent and resourcefulness of our members is what makes this space unique.</p>
-        <p style="color:var(--stone);font-weight:300;font-size:1.08rem;">If you need more than just a place to work — if you want to actually connect with people — then you found home. Escape the home office and discover a focused, friendly place.</p>
-      </div>
-      <img class="photo reveal" src="/img/common/photo-1.jpg" alt="Inside The Common coworking space" loading="lazy" />
-    </div>
-  </section>
-
-  <!-- VIDEO / SPACE -->
-  <section class="section warm">
-    <div class="wrap">
-      <div class="section-head center"><span class="eyebrow" style="justify-content:center;">The space</span><h2>Thoughtfully designed, <em>genuinely warm</em>.</h2><p>Inspired by start-up culture — warm wood, plants, a garden, good light, and good people.</p></div>
-      <a class="video reveal" href={VIDEO_URL} target="_blank" rel="noopener noreferrer" aria-label="Watch the video tour of The Common">
-        <span class="video-play" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="#0C0A09"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="video-label">Video tour of The Common · 0:46</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- SOCIAL CAPITAL -->
-  <section class="section light">
-    <div class="wrap">
-      <div class="section-head"><span class="eyebrow">Social Capital · Sponsorship</span><h2>Built to <em>give back</em>.</h2><p>The Common was built to create community and connection between people and organisations. Inspired by Seats2Meet in the Netherlands, we run three programmes to live that mission.</p></div>
-      <div class="cards">
-        {programmes.map((p) => (
-          <div class="card reveal"><h3>{p.name}</h3><p style="color:var(--stone);font-weight:300;font-size:0.95rem;margin-top:0.4rem;">{p.d}</p></div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section dark">
-    <div class="mesh" aria-hidden="true"></div>
-    <div class="wrap" style="position:relative;z-index:2;text-align:center;max-width:680px;">
-      <span class="eyebrow on-dark" style="justify-content:center;">Let's do something different</span>
-      <h2 style="font-size:clamp(2rem,5vw,3.4rem);color:#fff;margin:1.1rem 0;">If this sounds like <em class="shimmer">your kind of place</em>…</h2>
-      <p style="color:rgba(255,255,255,0.74);font-weight:300;font-size:1.1rem;margin:0 auto 2rem;max-width:480px;">We have a garden. We have a BBQ. We have weekly socials. If you want flexible and community — you are not alone.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="/membership/" class="btn btn-gold">See our plans</a>
-        <a href="/contact/" class="btn btn-glass">Let's connect →</a>
+      <img class="photo" src="/img/common/photo-2.jpg" alt="Desks and plants inside The Common" />
+      <div>
+        <span class="eyebrow">The space</span>
+        <h2>Come as you are.</h2>
+        <p>Whether you need a desk for an hour, a day, or every week, The Common gives you a welcoming place to get things done alongside other people.</p>
+        <div class="actions">
+          <a class="btn btn-ink" href="/day-pass/">Book a desk</a>
+          <a class="text-link" href="/membership/">See memberships →</a>
+        </div>
       </div>
     </div>
   </section>
 </Base>
 
 <style>
-  .video { position: relative; display: flex; align-items: flex-end; justify-content: center; aspect-ratio: 16/8; max-width: 980px; margin: 0 auto; border-radius: 22px; overflow: hidden; background: url('/img/common/photo-2.jpg') center/cover no-repeat; box-shadow: 0 30px 60px -24px rgba(0,0,0,0.4); padding: 1.6rem; }
-  .video::before { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(12,10,9,0.55), rgba(12,10,9,0.1)); transition: background 0.4s var(--ease); }
-  .video:hover::before { background: linear-gradient(0deg, rgba(12,10,9,0.45), rgba(12,10,9,0.05)); }
-  .video-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 78px; height: 78px; border-radius: 50%; background: rgba(255,255,255,0.95); display: flex; align-items: center; justify-content: center; padding-left: 5px; box-shadow: 0 8px 30px rgba(0,0,0,0.35); transition: transform 0.4s var(--ease); }
-  .video:hover .video-play { transform: translate(-50%,-50%) scale(1.08); }
-  .video-label { position: relative; z-index: 2; color: #fff; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; }
+  h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 1rem 0; }
+  p { color: var(--stone); font-size: 1.08rem; margin-bottom: 1.7rem; }
+  .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.3rem; }
+  .text-link { text-decoration: underline; text-underline-offset: 4px; font-weight: 500; }
 </style>

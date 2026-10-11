@@ -1,192 +1,95 @@
 ---
 import Base from '../layouts/Base.astro';
-const OFFICERND = 'https://e-commerce.officernd.com/thecommon/search-results?type=hotdesk&listingType=plan';
-// TODO: replace with the real YouTube tour URL ("Video Tour of The Common")
-const VIDEO_URL = 'https://www.youtube.com/watch?v=NePHctJ9Hq0';
-
-const options = [
-  { t: 'Membership', d: 'Flexible monthly plans built around how you actually work — part-time to full-time.', href: '/membership/', cta: 'See plans' },
-  { t: 'Drop in', d: 'Day passes and hourly desks. Get out of the house for a focused day, no commitment.', href: '/spaces/#dropin', cta: 'Drop in' },
-  { t: 'Meeting rooms', d: 'Phone booths, conference rooms, and a full venue — bookable by the hour.', href: '/spaces/#rooms', cta: 'Book a room' },
-  { t: 'Private offices', d: 'Your own private office for 1–4 people, by the day or month.', href: '/spaces/#offices', cta: 'Inquire' },
-];
-const amenities = [
-  'Monitor at every desk', 'Fast fibre wifi + smart security', 'Free tea & Counterpart coffee',
-  'Full kitchen', 'Lounge with TV', 'Garden with BBQ & outdoor workspace', 'Sit/stand desks', 'Dogs welcome',
-];
-const gallery = [
-  { src: '/img/common/photo-2.jpg',  alt: 'The Common coworking room with Edison bulbs and plants' },
-  { src: '/img/common/photo-13.jpg', alt: 'Desks and monitors at The Common' },
-  { src: '/img/common/photo-7.jpg',  alt: 'The Common entryway with plants and terrariums' },
-  { src: '/img/common/photo-10.jpg', alt: 'Coworking space with The Common logo lit up' },
-  { src: '/img/common/photo-12.jpg', alt: 'Warm wood desks under the Edison-bulb chandelier' },
-  { src: '/img/common/photo-3.jpg',  alt: 'The Common reclaimed-wood logo sign' },
-];
 ---
-<Base current="home" title="The Common — Squamish’s community & innovation hub">
-
-  <!-- HERO -->
+<Base current="home" title="The Common — Coworking in Squamish" description="Book a day pass or hourly desk, explore memberships, and work from The Common in downtown Squamish.">
   <header class="hero">
-    <img class="hero-img" src="/img/common/photo-1.jpg" alt="Inside The Common coworking space in Squamish" />
+    <img class="hero-img" src="/img/common/photo-1.jpg" alt="Coworking space inside The Common in Squamish" />
     <div class="hero-scrim" aria-hidden="true"></div>
-    <div class="wrap">
-      <span class="eyebrow on-dark">Squamish’s community &amp; innovation hub</span>
-      <h1>A community you <em>call home</em>.</h1>
-      <p class="sub">We’re not a coffee shop, and we’re not just a coworking space. The Common is a warm, welcoming place to work, connect, and belong — right in downtown Squamish.</p>
-      <div class="acts">
-        <a href="/membership/" class="btn btn-gold">See our plans</a>
-        <a href="#inside" class="btn btn-glass">Take a look inside →</a>
+    <div class="wrap hero-content">
+      <span class="eyebrow on-dark">Coworking in downtown Squamish</span>
+      <h1>A good place to <em>get to work</em>.</h1>
+      <p>Need a desk today or a regular place to work? Choose what fits and book online.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="/day-pass/">Book a desk</a>
+        <a class="btn btn-glass" href="/membership/">See memberships</a>
       </div>
     </div>
   </header>
 
-  <!-- WELCOME -->
-  <section class="section light">
-    <div class="wrap welcome">
-      <div class="reveal">
-        <span class="eyebrow">Welcome</span>
-        <p class="lead">Home to open-minded, forward-thinking people — founders, remote pros, makers, and creatives — who came for the wifi and stayed for each other. Come for the work; stay for the people.</p>
-        <div class="roster">
-          <span>Coders</span><span>CTOs</span><span>Founders</span><span>Lawyers</span><span>PhD students</span><span>Green-tech innovators</span><span>Creatives</span>
-        </div>
-      </div>
-      <div class="welcome-stats reveal">
-        <div><span class="n">2017</span><span class="l">Est. in Squamish</span></div>
-        <div><span class="n">14</span><span class="l">Desks</span></div>
-        <div><span class="n">5</span><span class="l">Private offices</span></div>
-        <div><span class="n">3</span><span class="l">Meeting spaces</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PEEK INSIDE (gallery + video) -->
-  <section class="section warm" id="inside">
-    <div class="wrap">
-      <div class="section-head center">
-        <span class="eyebrow" style="justify-content:center;">Take a look inside</span>
-        <h2>Warm wood, plants, good <em>light</em>, good people.</h2>
-        <p>Thoughtfully designed and inspired by start-up culture. Here’s a peek — or watch the full tour.</p>
-      </div>
-      <div class="gallery">
-        {gallery.map((g, i) => (
-          <figure class={`g-item reveal g-${i}`}><img src={g.src} alt={g.alt} loading="lazy" /></figure>
-        ))}
-      </div>
-      <div style="text-align:center;margin-top:2.4rem;">
-        <a href={VIDEO_URL} class="btn btn-ink" target="_blank" rel="noopener noreferrer">▶ Watch the video tour</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- WAYS TO WORK -->
   <section class="section light">
     <div class="wrap">
       <div class="section-head center">
-        <span class="eyebrow" style="justify-content:center;">Ways to work here</span>
-        <h2>Find the space that fits <em>your rhythm</em>.</h2>
-        <p>Become a regular, or just drop in for an hour. Either way, the community comes with it.</p>
+        <span class="eyebrow">Choose your next step</span>
+        <h2>How would you like to <em>work here?</em></h2>
       </div>
-      <div class="opt-grid">
-        {options.map((o) => (
-          <a class="opt reveal" href={o.href}>
-            <h3>{o.t}</h3>
-            <p>{o.d}</p>
-            <span class="opt-cta">{o.cta} →</span>
-          </a>
-        ))}
+      <div class="choices">
+        <a class="choice" href="/day-pass/">
+          <span class="choice-number">01</span>
+          <h3>Just visiting</h3>
+          <p>Choose a $37 day pass or a desk from $6.50 an hour. No membership needed.</p>
+          <strong>View desk options →</strong>
+        </a>
+        <a class="choice" href="/membership/">
+          <span class="choice-number">02</span>
+          <h3>Working here regularly</h3>
+          <p>See flexible monthly plans and full-time membership options.</p>
+          <strong>View memberships →</strong>
+        </a>
       </div>
+      <p class="rooms-link">Need a space for a meeting? <a href="/spaces/">See meeting rooms →</a></p>
     </div>
   </section>
 
-  <!-- AMENITIES + photo -->
   <section class="section warm">
-    <div class="wrap amen-wrap">
-      <div class="reveal">
-        <span class="eyebrow">The space</span>
-        <h2 class="serif" style="font-size:clamp(2rem,4.5vw,3rem);line-height:1.08;margin:1.1rem 0 1.4rem;">A space worth <em style="font-style:italic;color:var(--gold);">staying in</em>.</h2>
-        <ul class="amen">
-          {amenities.map((a) => (
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> {a}</li>
-          ))}
-        </ul>
+    <div class="wrap about-strip">
+      <img src="/img/common/photo-2.jpg" alt="Desks and plants at The Common" loading="lazy" />
+      <div>
+        <span class="eyebrow">The Common</span>
+        <h2>Work better, together.</h2>
+        <p>A welcoming place to work in downtown Squamish, with desks, meeting rooms, coffee, and people to connect with.</p>
+        <a class="text-link" href="/about/">Get to know The Common →</a>
       </div>
-      <img class="amen-photo reveal" src="/img/common/photo-2.jpg" alt="The Common coworking space interior" loading="lazy" />
     </div>
   </section>
 
-  <!-- FIND US -->
   <section class="section light">
-    <div class="wrap find">
-      <div class="reveal">
-        <span class="eyebrow">Where to find us</span>
-        <h2 class="serif" style="font-size:clamp(1.8rem,4vw,2.6rem);margin:1rem 0 1.4rem;">Downtown Squamish.</h2>
-        <p class="find-row">📍 38016 Cleveland Avenue, Squamish, BC</p>
-        <p class="find-row">✉️ <a href="mailto:welcome@thecommon.io">welcome@thecommon.io</a></p>
-        <p class="find-row">📞 <a href="tel:+17789060405">(778) 906-0405</a></p>
-        <div class="acts" style="margin-top:2rem;">
-          <a href="/contact/" class="btn btn-ink">Get in touch</a>
-          <a href="https://maps.google.com/?q=38016+Cleveland+Avenue,+Squamish,+BC" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Directions →</a>
-        </div>
+    <div class="wrap contact-strip">
+      <div>
+        <span class="eyebrow">Visit us</span>
+        <h2>Find us on Cleveland Avenue.</h2>
+        <p>38016 Cleveland Avenue, Squamish, BC</p>
       </div>
-      <img class="find-photo reveal" src="/img/common/photo-6.jpg" alt="The Common storefront on Cleveland Avenue, Squamish" loading="lazy" />
+      <div class="contact-actions">
+        <a class="btn btn-ink" href="/contact/">Contact us</a>
+        <a class="text-link" href="https://maps.google.com/?q=38016+Cleveland+Avenue,+Squamish,+BC" target="_blank" rel="noopener noreferrer">Get directions →</a>
+      </div>
     </div>
   </section>
-
 </Base>
 
 <style>
-  /* HERO — real photo via <img> (reliable) + warm scrim */
-  .hero { position: relative; min-height: 90vh; display: flex; align-items: flex-end; overflow: hidden; padding: 150px 0 80px; background: var(--ink-deep); }
-  .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); animation: kenburns 26s ease-in-out infinite alternate; }
-  @keyframes kenburns { from { transform: scale(1.06); } to { transform: scale(1.16) translateY(-1.5%); } }
-  .hero-scrim { position: absolute; inset: 0; background:
-    linear-gradient(90deg, rgba(12,10,9,0.74) 0%, rgba(12,10,9,0.4) 45%, rgba(12,10,9,0.08) 100%),
-    linear-gradient(0deg, rgba(12,10,9,0.55) 0%, rgba(12,10,9,0) 42%); }
-  .hero .wrap { position: relative; z-index: 2; max-width: 760px; }
-  .hero h1 { color: #fff; font-size: clamp(2.8rem, 7vw, 5rem); line-height: 1.03; margin: 1.4rem 0 1.3rem; letter-spacing: -0.02em; text-shadow: 0 2px 30px rgba(0,0,0,0.4); }
-  .hero h1 em { font-style: italic; font-weight: 400; color: var(--gold-glow); }
-  .sub { font-size: clamp(1.05rem, 2vw, 1.22rem); color: rgba(255,255,255,0.92); font-weight: 300; max-width: 540px; line-height: 1.7; margin-bottom: 2.2rem; text-shadow: 0 1px 16px rgba(0,0,0,0.5); }
-  .acts { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-  /* WELCOME */
-  .welcome { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3.5rem; align-items: center; }
-  .lead { font-size: clamp(1.15rem, 2.2vw, 1.5rem); font-family: var(--serif); font-weight: 400; line-height: 1.4; color: var(--ink); margin: 1.1rem 0 1.6rem; }
-  .roster { display: flex; flex-wrap: wrap; gap: 0.55rem; }
-  .roster span { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone); border: 1px solid var(--line); border-radius: 100px; padding: 0.45rem 1rem; background: rgba(255,255,255,0.55); }
-  .welcome-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem 1rem; padding-left: 2rem; border-left: 1px solid var(--line); }
-  .welcome-stats .n { display: block; font-family: var(--serif); font-size: 2.2rem; color: var(--ink); line-height: 1; }
-  .welcome-stats .l { display: block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone-soft); margin-top: 0.4rem; }
-  @media (max-width: 800px) { .welcome { grid-template-columns: 1fr; } .welcome-stats { padding-left: 0; border-left: 0; } }
-
-  /* GALLERY */
-  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
-  .g-item { margin: 0; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 18px 40px -28px rgba(28,25,23,0.5); }
-  .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease); }
-  .g-item:hover img { transform: scale(1.06); }
-  .g-0, .g-3 { aspect-ratio: 16/10; }
-  @media (max-width: 760px) { .gallery { grid-template-columns: 1fr 1fr; } .g-0, .g-3 { aspect-ratio: 4/3; } }
-
-  /* WAYS TO WORK */
-  .opt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.3rem; }
-  .opt { background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: 2rem 1.8rem; display: flex; flex-direction: column; transition: transform 0.5s var(--ease), border-color 0.5s var(--ease), box-shadow 0.5s var(--ease); }
-  .opt:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 18px 40px -24px rgba(28,25,23,0.4); }
-  .opt h3 { font-family: var(--serif); font-size: 1.45rem; margin-bottom: 0.5rem; }
-  .opt p { font-size: 0.95rem; color: var(--stone); font-weight: 300; flex: 1; margin-bottom: 1.2rem; }
-  .opt-cta { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
-
-  /* AMENITIES */
-  .amen-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
-  .amen { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem 1.4rem; }
-  .amen li { display: flex; gap: 0.6rem; align-items: flex-start; color: var(--stone); font-weight: 300; font-size: 1rem; }
-  .amen svg { flex-shrink: 0; margin-top: 4px; }
-  .amen-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 22px; box-shadow: 0 24px 50px -28px rgba(28,25,23,0.5); }
-  @media (max-width: 800px) { .amen-wrap { grid-template-columns: 1fr; } }
-
-
-  /* TEASER + FIND */
-  .teaser, .find { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
-  .teaser-img, .find-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 22px; box-shadow: 0 24px 50px -28px rgba(28,25,23,0.5); }
-  .find-row { font-size: 1.05rem; color: var(--stone); margin-bottom: 0.8rem; }
-  .find-row a { text-decoration: underline; text-underline-offset: 3px; }
-  @media (max-width: 800px) { .teaser, .find { grid-template-columns: 1fr; } }
+  .hero { position: relative; min-height: 78vh; display: flex; align-items: center; overflow: hidden; padding: 150px 0 80px; background: var(--ink-deep); }
+  .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero-scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12,10,9,0.83), rgba(12,10,9,0.28)); }
+  .hero-content { position: relative; z-index: 1; width: 100%; }
+  .hero h1 { color: var(--white); max-width: 700px; font-size: clamp(2.7rem, 7vw, 5.2rem); line-height: 1.05; margin: 1.2rem 0; }
+  .hero h1 em { color: var(--gold-glow); font-weight: 400; }
+  .hero p { color: var(--white); font-size: clamp(1.1rem, 2vw, 1.3rem); max-width: 520px; margin-bottom: 2rem; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+  .choice { display: flex; flex-direction: column; align-items: flex-start; padding: clamp(1.6rem, 4vw, 3rem); min-height: 280px; background: var(--white); border: 1px solid var(--line); border-radius: 20px; transition: border-color 0.2s, transform 0.2s; }
+  .choice:hover { border-color: var(--gold); transform: translateY(-3px); }
+  .choice-number { font-size: 0.8rem; color: var(--accent); letter-spacing: 0.12em; }
+  .choice h3 { font-size: clamp(1.7rem, 3vw, 2.2rem); line-height: 1.1; margin: 0.8rem 0; }
+  .choice p { color: var(--stone); font-size: 1.05rem; max-width: 370px; margin-bottom: 1.5rem; }
+  .choice strong { margin-top: auto; font-size: 0.9rem; color: var(--accent); }
+  .rooms-link { margin-top: 2rem; text-align: center; color: var(--stone); }
+  .rooms-link a, .text-link { text-decoration: underline; text-underline-offset: 4px; font-weight: 500; }
+  .about-strip { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(2rem, 5vw, 5rem); }
+  .about-strip img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 18px; }
+  .about-strip h2, .contact-strip h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 1rem 0; }
+  .about-strip p, .contact-strip p { color: var(--stone); font-size: 1.08rem; margin-bottom: 1.3rem; }
+  .contact-strip { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+  .contact-actions { display: flex; align-items: center; gap: 1.3rem; flex-wrap: wrap; }
+  @media (max-width: 760px) { .choices, .about-strip { grid-template-columns: 1fr; } .contact-strip { align-items: flex-start; flex-direction: column; } }
 </style>
