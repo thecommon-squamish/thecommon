@@ -1,0 +1,208 @@
+/* Raised desktop keycaps: an ivory top, a stepped sidewall, and a short press. */
+:root {
+  --key-top: #f8f5ed;
+  --key-edge: #d7d1c5;
+  --key-base: #a39d91;
+  --key-ink: #244634;
+  --key-green-top: #32684f;
+  --key-green-edge: #1e4735;
+  --key-green-base: #123021;
+}
+
+.btn,
+.nav-cta,
+.mobile-menu summary {
+  --cap: var(--key-top);
+  --edge: var(--key-edge);
+  --base: var(--key-base);
+  --letter: var(--key-ink);
+  position: relative;
+  border: 1px solid var(--edge);
+  border-radius: 8px;
+  background: var(--cap);
+  color: var(--letter);
+  box-shadow: inset 0 1px 0 #fff9, inset 0 -2px 0 #0000000c,
+    0 2px 0 var(--edge), 0 5px 0 var(--base), 0 8px 13px #122a1b29;
+  text-decoration: none;
+  transition: transform .14s ease, box-shadow .14s ease, background .14s ease, color .14s ease;
+}
+
+.btn-primary,
+.btn-ink,
+.nav-cta {
+  --cap: var(--key-green-top);
+  --edge: var(--key-green-edge);
+  --base: var(--key-green-base);
+  --letter: #fff;
+}
+
+.btn:hover,
+.nav-cta:hover,
+.mobile-menu summary:hover {
+  background: var(--cap);
+  color: var(--letter);
+  transform: translateY(-1px);
+}
+
+.btn:active,
+.nav-cta:active,
+.mobile-menu summary:active {
+  transform: translateY(4px);
+  box-shadow: inset 0 2px 3px #0002, 0 1px 0 var(--base), 0 2px 4px #122a1b20;
+}
+
+.nav-inner { gap: 1.25rem; }
+.nav-menu { gap: .43rem; }
+.nav-menu a,
+.mobile-menu li a {
+  display: inline-block;
+  padding: .48rem .68rem .53rem;
+  background: var(--key-top);
+  color: var(--key-ink);
+  border: 1px solid var(--key-edge);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 0 #fff, 0 2px 0 var(--key-edge), 0 4px 0 var(--key-base);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
+}
+.nav-menu a:hover,
+.nav-menu a[aria-current=page],
+.mobile-menu li a:hover,
+.mobile-menu li a[aria-current=page] {
+  background: #e4e8df;
+  color: var(--forest-deep);
+  text-decoration: none;
+}
+.nav-menu a[aria-current=page],
+.mobile-menu li a[aria-current=page] {
+  box-shadow: inset 0 2px 3px #0002, 0 1px 0 var(--key-base);
+  transform: translateY(3px);
+}
+.nav-menu a:active,
+.mobile-menu li a:active {
+  transform: translateY(3px);
+  box-shadow: inset 0 2px 3px #0002, 0 1px 0 var(--key-base);
+}
+.nav-cta { padding: .72rem 1rem; white-space: nowrap; }
+.mobile-menu summary { display: inline-block; padding: .51rem .76rem; }
+.mobile-menu ul { padding: .85rem; border-radius: 10px; background: #eeeae0; }
+.mobile-menu li + li { margin-top: .48rem; }
+.mobile-menu li a { display: block; padding: .6rem .8rem; white-space: normal; }
+
+.faq-booking-actions { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1rem; }
+
+.faq-list summary {
+  display: block;
+  padding: .9rem 2rem .95rem 1rem;
+  border: 1px solid var(--key-edge);
+  border-radius: 7px;
+  background: var(--key-top);
+  color: var(--key-ink);
+  box-shadow: inset 0 1px 0 #fff, 0 2px 0 var(--key-edge), 0 4px 0 var(--key-base);
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: '+'; float: right; margin-right: -1rem; }
+.faq-list details[open] summary { transform: translateY(3px); box-shadow: inset 0 2px 3px #0002, 0 1px 0 var(--key-base); }
+.faq-list details[open] summary::after { content: '−'; }
+
+/* Smaller keycaps retain the site's inline reading rhythm. */
+main a:not(.btn):not(.booking-route):not(:has(img)),
+.footer-links a,
+.footer-fine a {
+  display: inline-block;
+  max-width: 100%;
+  padding: .14rem .42rem .2rem;
+  border: 1px solid #c7c7b9;
+  border-radius: 5px;
+  background: #f8f5ed;
+  color: var(--forest-deep);
+  box-shadow: inset 0 1px 0 #fff, 0 2px 0 #c9c5b9, 0 3px 0 #9e9c8e;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1.35;
+  transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
+}
+main a:not(.btn):not(.booking-route):not(:has(img)):hover,
+.footer-links a:hover,
+.footer-fine a:hover {
+  background: #e4e8df;
+  color: var(--forest-deep);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+main a:not(.btn):not(.booking-route):not(:has(img)):active,
+.footer-links a:active,
+.footer-fine a:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 1px 2px #0002, 0 1px 0 #9e9c8e;
+}
+
+/* The words at the foot of each booking card become its key-shaped action. */
+.booking-section .booking-route .route-body b {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: .42rem .72rem .47rem;
+  border: 1px solid var(--key-edge);
+  border-radius: 6px;
+  background: var(--key-top);
+  color: var(--key-ink);
+  box-shadow: inset 0 1px 0 #fff, 0 2px 0 var(--key-edge), 0 4px 0 var(--key-base);
+  text-decoration: none;
+}
+.booking-section .booking-route:active .route-body b { transform: translateY(3px); box-shadow: inset 0 2px 3px #0002, 0 1px 0 var(--key-base); }
+
+/* Light keys stay readable against the dark photography and green visit band. */
+.home-hero .hero-buttons .btn-primary,
+.visit-actions .btn-primary,
+.workday-content .btn-primary {
+  --cap: var(--key-top);
+  --edge: var(--key-edge);
+  --base: var(--key-base);
+  --letter: var(--key-ink);
+  background: var(--cap);
+  color: var(--letter);
+}
+.home-hero .hero-copy .hero-buttons a.btn.btn-secondary {
+  --cap: var(--key-green-top);
+  --edge: var(--key-green-edge);
+  --base: var(--key-green-base);
+  --letter: #fff;
+  background: var(--cap);
+  color: var(--letter);
+  border-color: var(--edge);
+}
+
+.booking-section .wrap { position: relative; }
+.booking-mouse {
+  position: absolute;
+  width: 82px;
+  height: auto;
+  right: 2.5rem;
+  top: -2.2rem;
+  transform: rotate(14deg);
+  filter: drop-shadow(4px 7px 4px #24362726);
+  pointer-events: none;
+}
+.mouse-cord { fill: none; stroke: #24543e; stroke-width: 3; stroke-linecap: round; }
+.mouse-base { fill: #f5f0e4; stroke: #24543e; stroke-width: 3; }
+.mouse-seam { fill: none; stroke: #a7b1a3; stroke-width: 2; }
+.mouse-wheel { fill: #df795e; }
+
+@media (max-width: 1080px) {
+  .nav-menu { display: none; }
+  .nav-cta { margin-left: auto; }
+}
+@media (max-width: 850px) {
+  .booking-mouse { right: 1.5rem; top: -2rem; width: 64px; opacity: .68; }
+}
+@media (max-width: 560px) {
+  .booking-mouse { display: none; }
+  .nav-cta { padding: .6rem .75rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn, .nav-cta, .nav-menu a, .mobile-menu summary, .mobile-menu li a,
+  .faq-list summary, main a:not(.booking-route), .footer-links a, .footer-fine a { transition: none; }
+}
