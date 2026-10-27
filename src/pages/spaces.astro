@@ -16,4 +16,10 @@ const rooms = [
 </Base>
 <style>
   .rooms-intro{margin-bottom:2.5rem}.rooms-intro h2{font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.04em;margin-bottom:.6rem}.rooms-intro p,.system-note,.other-options p{color:var(--muted)}.room-list{display:grid;gap:1.2rem}.room{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--line)}.room img{width:100%;height:100%;min-height:360px;object-fit:cover}.room-copy{display:flex;flex-direction:column;align-items:start;justify-content:center;padding:clamp(1.5rem,4vw,4rem)}.room-copy h3{font-size:clamp(2rem,3.5vw,3rem);letter-spacing:-.04em;margin:.5rem 0 1rem}.room-copy p{font-size:1.08rem;color:var(--muted);max-width:450px}.room-copy .btn{margin-top:1rem}.system-note{font-size:.92rem;margin:1.5rem 0 0}.other-options{display:flex;align-items:center;justify-content:space-between;gap:2rem}.other-options h2{font-size:clamp(1.9rem,3vw,3rem);margin:.5rem 0}.other-options p{margin:0}@media(max-width:750px){.room{grid-template-columns:1fr}.room img{height:auto;min-height:0;aspect-ratio:1.5}.room-copy{padding:1.5rem 1.4rem 2rem}.other-options{align-items:start;flex-direction:column}}
+  .room-list{gap:3rem}
+  .room{background:transparent;border:0;border-bottom:1px solid var(--line);gap:clamp(1rem,4vw,4rem);padding:1rem 0 3rem}
+  .room img{height:430px;min-height:0;border:10px solid #fff;box-shadow:16px 16px 0 #d9e0d4,0 22px 34px #1d35282e;transform:rotate(-1deg)}
+  .room:nth-child(even) img{order:2;transform:rotate(1.5deg);box-shadow:-16px 16px 0 #ded2c0,0 22px 34px #1d35282e}
+  .room-copy{padding:clamp(1rem,3vw,2.5rem)}
+  @media(max-width:750px){.room img,.room:nth-child(even) img{order:0;height:auto;aspect-ratio:1.5;transform:rotate(0deg);box-shadow:10px 10px 0 #d9e0d4}.room-copy{padding:1.5rem .5rem 1rem}}
 </style>
