@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import PrivateOfficeFeature from '../components/PrivateOfficeFeature.astro';
 
 const MEMBERSHIPS = 'https://e-commerce.officernd.com/thecommon/search-results?type=hotdesk&listingType=plan';
 const plans = [
@@ -9,7 +10,7 @@ const plans = [
   { days: '24/7 access', price: '$495', name: 'Full-time' },
 ];
 ---
-<Base current="membership" title="Coworking memberships | The Common Squamish" description="Choose a flexible or full-time coworking membership at The Common in downtown Squamish.">
+<Base current="membership" title="Coworking memberships and private offices | The Common Squamish" description="Choose a coworking membership or ask about monthly private office availability at The Common in downtown Squamish.">
   <header class="page-hd">
     <div class="mesh" aria-hidden="true"></div>
     <div class="wrap">
@@ -39,16 +40,7 @@ const plans = [
     </div>
   </section>
 
-  <section class="section warm">
-    <div class="wrap other-options">
-      <div>
-        <span class="eyebrow">Other ways to work here</span>
-        <h2>Need a private office?</h2>
-        <p>Ask us about monthly office availability or a virtual business address.</p>
-      </div>
-      <a class="btn btn-outline" href="/contact/">Contact us</a>
-    </div>
-  </section>
+  <PrivateOfficeFeature />
 
   <section class="section light">
     <div class="wrap other-options">

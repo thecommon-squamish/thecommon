@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import PrivateOfficeFeature from '../components/PrivateOfficeFeature.astro';
 const rooms = [
   { name:'Micro Office', type:'One person', text:'A private room for focused work or a call.', photo:'/img/approved/micro-office.jpg', alt:'The Micro Office at The Common', url:'https://e-commerce.officernd.com/thecommon/resources/685a4f6aeefbc2e8fa8b62ba' },
   { name:'Trailer', type:'Up to three people', text:'A small meeting space in the courtyard, with a table and bench seating.', photo:'/img/approved/trailer.jpg', alt:'Table and bench seating inside the Trailer', url:'https://e-commerce.officernd.com/thecommon/resources/685a4f6aeefbc2e8fa8b62aa' },
@@ -9,17 +10,22 @@ const rooms = [
 <Base current="spaces" title="Book a room | The Common Squamish" description="Book the Micro Office, Trailer, or Small Conference Room at The Common in Squamish. Go directly to each room’s availability.">
   <header class="page-hd"><div class="wrap"><span class="eyebrow on-dark">Book a room</span><h1>Rooms at The Common.</h1><p>Choose a room, then pick your date and time online.</p></div></header>
   <section class="section light"><div class="wrap"><div class="rooms-intro"><h2>Pick the room that fits.</h2><p>Each room has its own booking page with current availability and prices.</p></div>
-    <div class="room-list">{rooms.map((room) => <article class="room"><img src={room.photo} alt={room.alt} loading="lazy" /><div class="room-copy"><span class="kicker">{room.type}</span><h3>{room.name}</h3><p>{room.text}</p><a class="btn btn-primary" href={room.url} target="_blank" rel="noopener noreferrer">Check availability</a></div></article>)}</div>
+    <div class="room-list">{rooms.map((room) => <article class="room"><div class="room-photo"><img src={room.photo} alt={room.alt} loading="lazy" /></div><div class="room-copy"><span class="kicker">{room.type}</span><h3>{room.name}</h3><p>{room.text}</p><a class="btn btn-primary" href={room.url} target="_blank" rel="noopener noreferrer">Check availability</a></div></article>)}</div>
     <p class="system-note">The indoor phone booth is for short calls and cannot be reserved.</p>
   </div></section>
-  <section class="section warm"><div class="wrap other-options"><div><span class="kicker">Other options</span><h2>Need an office for a month or a space for an event?</h2><p>Contact us with the details and we'll help you find the right option.</p></div><a class="btn btn-secondary" href="/contact/">Contact us</a></div></section>
+  <PrivateOfficeFeature />
+  <section class="section warm"><div class="wrap other-options"><div><span class="kicker">Get together</span><h2>Planning a bigger event?</h2><p>Tell us what you have in mind and we'll talk through the options.</p></div><a class="btn btn-secondary" href="/event-space/">See event space</a></div></section>
 </Base>
 <style>
-  .rooms-intro{margin-bottom:2.5rem}.rooms-intro h2{font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.04em;margin-bottom:.6rem}.rooms-intro p,.system-note,.other-options p{color:var(--muted)}.room-list{display:grid;gap:1.2rem}.room{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--line)}.room img{width:100%;height:100%;min-height:360px;object-fit:cover}.room-copy{display:flex;flex-direction:column;align-items:start;justify-content:center;padding:clamp(1.5rem,4vw,4rem)}.room-copy h3{font-size:clamp(2rem,3.5vw,3rem);letter-spacing:-.04em;margin:.5rem 0 1rem}.room-copy p{font-size:1.08rem;color:var(--muted);max-width:450px}.room-copy .btn{margin-top:1rem}.system-note{font-size:.92rem;margin:1.5rem 0 0}.other-options{display:flex;align-items:center;justify-content:space-between;gap:2rem}.other-options h2{font-size:clamp(1.9rem,3vw,3rem);margin:.5rem 0}.other-options p{margin:0}@media(max-width:750px){.room{grid-template-columns:1fr}.room img{height:auto;min-height:0;aspect-ratio:1.5}.room-copy{padding:1.5rem 1.4rem 2rem}.other-options{align-items:start;flex-direction:column}}
-  .room-list{gap:3rem}
-  .room{background:transparent;border:0;border-bottom:1px solid var(--line);gap:clamp(1rem,4vw,4rem);padding:1rem 0 3rem}
-  .room img{height:430px;min-height:0;border:10px solid #fff;box-shadow:16px 16px 0 #d9e0d4,0 22px 34px #1d35282e;transform:rotate(-1deg)}
-  .room:nth-child(even) img{order:2;transform:rotate(1.5deg);box-shadow:-16px 16px 0 #ded2c0,0 22px 34px #1d35282e}
-  .room-copy{padding:clamp(1rem,3vw,2.5rem)}
-  @media(max-width:750px){.room img,.room:nth-child(even) img{order:0;height:auto;aspect-ratio:1.5;transform:rotate(0deg);box-shadow:10px 10px 0 #d9e0d4}.room-copy{padding:1.5rem .5rem 1rem}}
+  .rooms-intro{margin-bottom:2.5rem}.rooms-intro h2{font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.04em;margin-bottom:.6rem}.rooms-intro p,.system-note,.other-options p{color:var(--muted)}
+  .room-list{display:grid;gap:3.4rem}
+  .room{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(1.5rem,4vw,4rem);align-items:center;border-bottom:1px solid var(--line);padding:1rem 0 3.4rem}
+  .room-photo{padding:10px;background:#fff;box-shadow:16px 16px 0 #d9e0d4,0 22px 34px #1d35282e;transform:rotate(-.7deg)}
+  .room-photo img{display:block;width:100%;height:auto;object-fit:contain}
+  .room:nth-child(even) .room-photo{order:2;transform:rotate(.7deg);box-shadow:-16px 16px 0 #ded2c0,0 22px 34px #1d35282e}
+  .room-copy{display:flex;flex-direction:column;align-items:start;justify-content:center;padding:clamp(.5rem,2vw,2rem)}
+  .room-copy h3{font-size:clamp(2rem,3.5vw,3rem);letter-spacing:-.04em;margin:.5rem 0 1rem}
+  .room-copy p{font-size:1.08rem;color:var(--muted);max-width:450px}.room-copy .btn{margin-top:1rem}
+  .system-note{font-size:.92rem;margin:1.5rem 0 0}.other-options{display:flex;align-items:center;justify-content:space-between;gap:2rem}.other-options h2{font-size:clamp(1.9rem,3vw,3rem);margin:.5rem 0}.other-options p{margin:0}
+  @media(max-width:750px){.room{grid-template-columns:1fr;gap:1rem}.room:nth-child(even) .room-photo{order:0}.room-photo,.room:nth-child(even) .room-photo{transform:none;box-shadow:10px 10px 0 #d9e0d4}.room-copy{padding:1.5rem .5rem 1rem}.other-options{align-items:start;flex-direction:column}}
 </style>
