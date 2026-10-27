@@ -45,6 +45,15 @@ const business = {
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-L9RSCHQ4KG');
+    document.addEventListener('click', function (event) {
+      if (!(event.target instanceof Element)) return;
+      const link = event.target.closest('a[href*="e-commerce.officernd.com"]');
+      if (!link) return;
+      gtag('event', 'booking_click', {
+        booking_label: link.textContent.trim(),
+        page_path: window.location.pathname,
+      });
+    });
   </script>}
 
 </head>

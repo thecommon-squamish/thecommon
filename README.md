@@ -26,6 +26,7 @@ This Astro repository is the review version of The Common's proposed website. Th
 - **Live WordPress:** Six published pages and five historical posts were inventoried. The booking and visitor guidance, 2017 founding story, community programs, events history, and practical amenities have been incorporated where they still help visitors. The site's 2018 contest, April Fools outdoor-office page, old upgrade log, and older promotions are historical material, not current offers.
 - **Dev WordPress:** Ten published pages were inventoried. Its custom theme uses a black/white base, coral accent, Squamish landscape imagery, and four intent-led routes. The site now uses its local imagery, visual accent, community line, and direct routes for work, meetings, events, and help. Several dev inner pages contain placeholder text; its 2022 pricing form is out of date and is not carried over.
 - **Current booking system:** Direct OfficeRnD links remain the operational source for room and desk availability. Do not replace them with dev WordPress form links.
+- **Measurement:** The production site will record clicks from Astro into OfficeRnD as `booking_click` events in the existing Google Analytics property. Preview traffic is excluded. Completed bookings require a separate OfficeRnD/analytics integration and are not inferred from clicks.
 
 ### Proposed redirects at cutover
 
