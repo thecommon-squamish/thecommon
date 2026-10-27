@@ -120,7 +120,7 @@ main a:not(.btn):not(.booking-route):not(:has(img)),
   background: #f8f5ed;
   color: var(--forest-deep);
   box-shadow: inset 0 1px 0 #fff, 0 2px 0 #c9c5b9, 0 3px 0 #9e9c8e;
-  text-decoration: none;
+  text-decoration: none !important;
   font-weight: 700;
   line-height: 1.35;
   transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
@@ -133,6 +133,7 @@ main a:not(.btn):not(.booking-route):not(:has(img)):hover,
   text-decoration: none;
   transform: translateY(-1px);
 }
+.squamish-caption a { border-bottom: 1px solid #c7c7b9 !important; }
 main a:not(.btn):not(.booking-route):not(:has(img)):active,
 .footer-links a:active,
 .footer-fine a:active {
