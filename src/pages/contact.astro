@@ -20,7 +20,7 @@ const HUBSPOT_FORM = '845c5505-46d2-4244-a0d2-ef7fb8345de9';
       <div>
         <span class="eyebrow">Where to find us</span>
         <h2 class="serif" style="font-size:clamp(1.8rem,4vw,2.6rem);margin:1rem 0 1.4rem;">Downtown Squamish.</h2>
-        <p class="c-row"><strong>Visit</strong><span>38016 Cleveland Avenue,<br>Squamish, BC V8B 0A1</span></p>
+        <p class="c-row"><strong>Visit</strong><span>38016 Cleveland Avenue,<br>Squamish, BC</span></p>
         <p class="c-row"><strong>Email</strong><a href="mailto:welcome@thecommon.io">welcome@thecommon.io</a></p>
         <p class="c-row"><strong>Call</strong><a href="tel:+17789060405">(778) 906-0405</a></p>
         <p class="book-direct">Ready to reserve a space? <a href="/spaces/">Book a room</a> or <a href="/day-pass/">book a desk</a> online.</p>
@@ -39,10 +39,7 @@ const HUBSPOT_FORM = '845c5505-46d2-4244-a0d2-ef7fb8345de9';
         <div class="hbspt-form" id="hubspot-contact-form"></div>
         <script is:inline src="https://js.hsforms.net/forms/embed/v2.js"></script>
         <script is:inline define:vars={{ HUBSPOT_PORTAL, HUBSPOT_FORM }}>
-          window.hsFormsOnReady = window.hsFormsOnReady || [];
-          window.hsFormsOnReady.push(() => {
-            hbspt.forms.create({ portalId: HUBSPOT_PORTAL, formId: HUBSPOT_FORM, target: '#hubspot-contact-form' });
-          });
+          hbspt.forms.create({ portalId: HUBSPOT_PORTAL, formId: HUBSPOT_FORM, target: '#hubspot-contact-form' });
         </script>
       </div>
     </div>

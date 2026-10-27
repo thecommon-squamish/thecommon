@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+const questions = [
+  { q: 'How do I book a desk or room?', a: 'Choose a desk or one of our three bookable rooms on this site. The booking button opens The Common’s booking system, where you can see availability, choose your time, and pay or send a request.' },
+  { q: 'How do I get into the building?', a: 'After you book and pay, look for The Common’s welcome email with arrival and door access details. Some bookings require approval; if you have not received your instructions, contact us before you arrive.' },
+  { q: 'Can I take a call at a hot desk?', a: 'A short, quiet call is fine. For longer conversations, use the indoor phone booth for a brief call or book a private room. Please keep the shared workspace comfortable for everyone.' },
+  { q: 'Is the phone booth bookable?', a: 'The indoor phone booth is for short, unscheduled calls. The Micro Office, Trailer, and Small Conference Room are the spaces you can reserve online.' },
+  { q: 'Can I bring my dog?', a: 'The Common welcomes considerate dogs. Please check availability before bringing yours, keep them settled by your desk, and clean up after them. The courtyard has artificial turf.' },
+  { q: 'Is there somewhere to eat or take a break?', a: 'Yes. There is a kitchen and lounge for preparing or storing a meal, plus an outdoor courtyard when the weather is good.' },
+  { q: 'Where do I find my bookings and invoices?', a: 'Your reservations, invoices, and space guides are available in The Common’s member portal after you create a booking.' },
+];
+---
+<Base current="faq" title="Your visit, answered | The Common Squamish" description="Find out how to book, enter, take calls, bring a dog, and use the kitchen and courtyard at The Common in Squamish.">
+  <header class="page-hd"><div class="wrap"><span class="eyebrow on-dark">Before you come in</span><h1>Good to know.</h1><p>Quick answers so you can book your space and get on with your day.</p></div></header>
+  <section class="section light"><div class="wrap faq-layout"><div><span class="kicker">The basics</span><h2>One less thing to wonder about.</h2><p>The Common is at 38016 Cleveland Avenue in downtown Squamish. Bookings and current prices are handled online.</p><a class="btn btn-primary" href="/spaces/">Book a room ↗</a><a class="desk-link" href="/day-pass/">Or find a desk ↗</a></div><div class="faq-list">{questions.map(({q,a}) => <details><summary>{q}</summary><p>{a}</p></details>)}</div></div></section>
+  <section class="section warm"><div class="wrap faq-end"><div><span class="kicker">Still unsure?</span><h2>Ask a person.</h2><p>We’ll help you choose a space or sort out an arrival question.</p></div><a class="btn btn-secondary" href="/contact/">Contact The Common ↗</a></div></section>
+</Base>
+<style>.faq-layout{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(2rem,6vw,6rem)}.faq-layout h2,.faq-end h2{font-size:clamp(2rem,3.5vw,3.2rem);letter-spacing:-.04em;margin:.65rem 0 1rem}.faq-layout p,.faq-end p{color:var(--muted)}.desk-link{display:block;color:var(--forest);font-weight:700;text-decoration:underline;text-underline-offset:4px;margin-top:1rem}.faq-list{border-top:1px solid var(--line)}.faq-list details{border-bottom:1px solid var(--line);padding:1.2rem 0}.faq-list summary{cursor:pointer;font-size:1.16rem;font-weight:700;line-height:1.35;padding-right:2rem}.faq-list details p{margin:.9rem 0 0;max-width:650px}.faq-end{display:flex;justify-content:space-between;align-items:center;gap:2rem}.faq-end p{margin:0}@media(max-width:760px){.faq-layout{grid-template-columns:1fr}.faq-end{align-items:start;flex-direction:column}}</style>

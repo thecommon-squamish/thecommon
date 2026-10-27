@@ -11,6 +11,17 @@ const {
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const isPreview = import.meta.env.PUBLIC_SITE_PREVIEW === 'true';
+const business = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'The Common',
+  url: 'https://www.thecommon.io/',
+  image: 'https://www.thecommon.io/img/approved/main-workspace.jpg',
+  telephone: '+1-778-906-0405',
+  email: 'welcome@thecommon.io',
+  address: { '@type': 'PostalAddress', streetAddress: '38016 Cleveland Avenue', addressLocality: 'Squamish', addressRegion: 'BC', addressCountry: 'CA' },
+  sameAs: ['https://www.instagram.com/thecommon.io/', 'https://www.facebook.com/thecommon.io/'],
+};
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +36,8 @@ const isPreview = import.meta.env.PUBLIC_SITE_PREVIEW === 'true';
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonical} />
+  <meta property="og:image" content="https://www.thecommon.io/img/approved/main-workspace.jpg" />
+  {current === 'home' && <script type="application/ld+json" is:inline set:html={JSON.stringify(business)} />}
 
   {!isPreview && <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9RSCHQ4KG"></script>}
   {!isPreview && <script is:inline>
