@@ -9,22 +9,22 @@ const plans = [
   { days: '24/7 access', price: '$495', name: 'Full-time' },
 ];
 ---
-<Base current="membership" title="Coworking memberships — The Common Squamish" description="Choose a flexible or full-time coworking membership at The Common in downtown Squamish.">
+<Base current="membership" title="Coworking memberships | The Common Squamish" description="Choose a flexible or full-time coworking membership at The Common in downtown Squamish.">
   <header class="page-hd">
     <div class="mesh" aria-hidden="true"></div>
     <div class="wrap">
-      <span class="eyebrow on-dark">Membership</span>
-      <h1>Make this your <em class="shimmer">workspace</em>.</h1>
-      <p>Choose how often you want to work at The Common. Desk memberships have a three-month minimum and are billed monthly.</p>
+      <span class="eyebrow on-dark">Monthly memberships</span>
+      <h1>Work here <em class="shimmer">regularly</em>.</h1>
+      <p>Pick the number of days you need each month. Desk memberships have a three-month minimum.</p>
     </div>
   </header>
 
   <section class="section light">
     <div class="wrap">
-      <div class="membership-intro"><img src="/img/approved/main-workspace.jpg" alt="People working together in The Common" loading="lazy" /><div><span class="eyebrow">Your regular place</span><h2>Familiar faces. Room to focus.</h2><p>Choose the desk plan that fits your month and make The Common part of your routine.</p></div></div>
+      <div class="membership-intro"><img src="/img/approved/main-workspace.jpg" alt="People working together in The Common" loading="lazy" /><div><span class="eyebrow">Your monthly desk</span><h2>Work alongside people you know.</h2><p>Come in when your plan allows, use a desk with a monitor, and get to know the other people working here.</p></div></div>
       <div class="plan-heading">
         <h2>Monthly desk plans</h2>
-        <p>Pick the number of days that fits your schedule. Three-month minimum, billed monthly.</p>
+        <p>Choose the number of days that fits your schedule. Plans are billed monthly with a three-month minimum.</p>
       </div>
       <div class="plan-list">
         {plans.map((plan) => (
@@ -34,8 +34,8 @@ const plans = [
           </div>
         ))}
       </div>
-      <a class="btn btn-ink plan-action" href={MEMBERSHIPS} target="_blank" rel="noopener noreferrer">Request a membership →</a>
-      <p class="plan-note">Choose a plan and send a request. The Common will confirm it before your membership starts.</p>
+      <a class="btn btn-ink plan-action" href={MEMBERSHIPS} target="_blank" rel="noopener noreferrer">Request a membership</a>
+      <p class="plan-note">Choose a plan and send a request. We'll confirm it before your membership starts.</p>
     </div>
   </section>
 
@@ -43,10 +43,10 @@ const plans = [
     <div class="wrap other-options">
       <div>
         <span class="eyebrow">Other ways to work here</span>
-        <h2>Need something different?</h2>
-        <p>Ask us about private offices or a virtual business address.</p>
+        <h2>Need a private office?</h2>
+        <p>Ask us about monthly office availability or a virtual business address.</p>
       </div>
-      <a class="btn btn-outline" href="/contact/">Contact us →</a>
+      <a class="btn btn-outline" href="/contact/">Contact us</a>
     </div>
   </section>
 
@@ -54,10 +54,10 @@ const plans = [
     <div class="wrap other-options">
       <div>
         <span class="eyebrow">Try us first</span>
-        <h2>Just visiting?</h2>
-        <p>Book a desk for a day or a few hours. No membership needed.</p>
+        <h2>Want to try the space first?</h2>
+        <p>Book a desk for a few hours or a day.</p>
       </div>
-      <a class="btn btn-outline" href="/day-pass/">See desk options →</a>
+      <a class="btn btn-outline" href="/day-pass/">See desk options</a>
     </div>
   </section>
 </Base>
