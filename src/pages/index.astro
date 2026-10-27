@@ -1,95 +1,42 @@
 ---
 import Base from '../layouts/Base.astro';
+const ROOMS = 'https://e-commerce.officernd.com/thecommon/search-results?type=meeting_room&listingType=resource';
 ---
-<Base current="home" title="The Common — Coworking in Squamish" description="Book a day pass or hourly desk, explore memberships, and work from The Common in downtown Squamish.">
-  <header class="hero">
-    <img class="hero-img" src="/img/common/hero-working.jpg" alt="People working at desks inside The Common in Squamish" width="1844" height="853" fetchpriority="high" />
-    <div class="hero-scrim" aria-hidden="true"></div>
-    <div class="wrap hero-content">
-      <span class="eyebrow on-dark">Coworking in downtown Squamish</span>
-      <h1>A good place to <em>get to work</em>.</h1>
-      <p>Need a desk today or a regular place to work? Choose what fits and book online.</p>
-      <div class="hero-actions">
-        <a class="btn btn-gold" href="/day-pass/">Book a desk</a>
-        <a class="btn btn-glass" href="/membership/">See memberships</a>
-      </div>
+<Base current="home" title="The Common | Coworking and bookable rooms in Squamish" description="Find a desk, book a private room, or make The Common your regular workspace in downtown Squamish.">
+  <header class="home-hero">
+    <div class="hero-copy">
+      <span class="kicker">Downtown Squamish · Coworking & community</span>
+      <h1>Your place to work <em>in Squamish.</em></h1>
+      <p>A desk for today, a room for your next meeting, or a place to come back to. Find your spot at The Common.</p>
+      <div class="hero-buttons"><a class="btn btn-primary" href="/spaces/">Book a room ↗</a><a class="btn btn-secondary" href="/day-pass/">Book a desk ↗</a></div>
+      <p class="booking-note">Choose a space, see availability, and finish booking online.</p>
     </div>
+    <div class="hero-picture"><img src="/img/approved/main-workspace.jpg" alt="The Common coworking room with desks and people working" width="1448" height="1086" fetchpriority="high" /><span class="photo-caption">Inside The Common, Cleveland Avenue</span></div>
   </header>
 
-  <section class="section light">
-    <div class="wrap">
-      <div class="section-head center">
-        <span class="eyebrow">Choose your next step</span>
-        <h2>How would you like to <em>work here?</em></h2>
-      </div>
-      <div class="choices">
-        <a class="choice" href="/day-pass/">
-          <span class="choice-number">01</span>
-          <h3>Just visiting</h3>
-          <p>Choose a $37 day pass or a desk from $6.50 an hour. No membership needed.</p>
-          <strong>View desk options →</strong>
-        </a>
-        <a class="choice" href="/membership/">
-          <span class="choice-number">02</span>
-          <h3>Working here regularly</h3>
-          <p>See flexible monthly plans and full-time membership options.</p>
-          <strong>View memberships →</strong>
-        </a>
-      </div>
-      <p class="rooms-link">Need a room to work or meet? <a href="/spaces/">See bookable rooms →</a></p>
+  <section class="booking-section" id="book"><div class="wrap">
+    <div class="section-heading"><div><span class="kicker">Find your place</span><h2>What brings you in?</h2></div><p>Pick the kind of space you need. We’ll take you straight to the next step.</p></div>
+    <div class="booking-routes">
+      <a class="booking-route" href="/spaces/"><img src="/img/approved/conference-room.jpg" alt="Small Conference Room at The Common" loading="lazy" /><span class="route-body"><span class="route-label">Meet or focus</span><strong>Book a room</strong><span>Micro Office, Trailer, or Small Conference Room</span><b>See the rooms ↗</b></span></a>
+      <a class="booking-route" href="/day-pass/"><img src="/img/approved/hot-desks.jpg" alt="Shared desks at The Common" loading="lazy" /><span class="route-body"><span class="route-label">Just visiting</span><strong>Book a desk</strong><span>Come for a few hours or stay for the day</span><b>See desk options ↗</b></span></a>
+      <a class="booking-route" href="/membership/"><img src="/img/approved/private-office.jpg" alt="Private office at The Common" loading="lazy" /><span class="route-body"><span class="route-label">Make it a regular thing</span><strong>Memberships & offices</strong><span>Flexible desk plans and monthly private space</span><b>Explore options ↗</b></span></a>
     </div>
-  </section>
+    <p class="booking-assist">Already know what you need? <a href={ROOMS} target="_blank" rel="noopener noreferrer">Go straight to room availability ↗</a> &nbsp; Planning a larger gathering? <a href="/contact/">Ask about event space ↗</a></p>
+  </div></section>
 
-  <section class="section warm">
-    <div class="wrap about-strip">
-      <img src="/img/common/photo-2.jpg" alt="Desks and plants at The Common" loading="lazy" />
-      <div>
-        <span class="eyebrow">The Common</span>
-        <h2>Work better, together.</h2>
-        <p>A welcoming place to work in downtown Squamish, with desks, bookable rooms, coffee, and people to connect with.</p>
-        <a class="text-link" href="/about/">Get to know The Common →</a>
-      </div>
-    </div>
-  </section>
+  <section class="home-story"><div class="wrap story-grid"><div class="story-photo"><img src="/img/approved/shared-table.jpg" alt="People sharing a table at The Common" loading="lazy" /></div><div class="story-copy"><span class="kicker">The people make the place</span><h2>More than a desk in Squamish.</h2><p>The Common was built for people to get work done and get to know one another. Some days that means a quiet hour at a desk. Other days it means coffee in the kitchen, a conversation over lunch, or a new connection that lasts.</p><p>It’s a real coworking space, right on Cleveland Avenue, with room to focus and room to be part of something.</p><a class="inline-link" href="/about/">Get to know The Common ↗</a></div></div></section>
 
-  <section class="section light">
-    <div class="wrap contact-strip">
-      <div>
-        <span class="eyebrow">Visit us</span>
-        <h2>Find us on Cleveland Avenue.</h2>
-        <p>38016 Cleveland Avenue, Squamish, BC</p>
-      </div>
-      <div class="contact-actions">
-        <a class="btn btn-ink" href="/contact/">Contact us</a>
-        <a class="text-link" href="https://maps.google.com/?q=38016+Cleveland+Avenue,+Squamish,+BC" target="_blank" rel="noopener noreferrer">Get directions →</a>
-      </div>
-    </div>
-  </section>
+  <section class="tour-section"><div class="wrap"><div class="tour-heading"><div><span class="kicker">Take a look around</span><h2>See the space before you come in.</h2></div><p>A quick walk through The Common, from the front door to the rooms and courtyard.</p></div><video controls playsinline preload="none" poster="/img/approved/main-workspace.jpg" aria-label="Video tour of The Common coworking space"><source src="/video/the-common-walkthrough.mp4" type="video/mp4" />Your browser does not support video. <a href="/video/the-common-walkthrough.mp4">Open the tour video</a>.</video></div></section>
+
+  <section class="day-in-space"><div class="wrap day-grid"><div><span class="kicker">Around the space</span><h2>Settle in. Stay a while.</h2><p>Find a desk with a monitor, make lunch in the kitchen, step outside when the weather’s good, and use the indoor phone booth for a short call.</p><a class="inline-link" href="/spaces/">Explore the space ↗</a></div><img src="/img/approved/courtyard.jpg" alt="Outdoor seating area at The Common" loading="lazy" /></div></section>
+
+  <section class="visit-bar"><div class="wrap visit-grid"><div><span class="kicker">Come find us</span><h2>In the heart of downtown.</h2><p>38016 Cleveland Avenue, Squamish, BC</p></div><div class="visit-actions"><a class="btn btn-primary" href="/spaces/">Find a room</a><a class="inline-link" href="https://maps.google.com/?q=38016+Cleveland+Avenue,+Squamish,+BC" target="_blank" rel="noopener noreferrer">Directions ↗</a></div></div></section>
 </Base>
 
 <style>
-  .hero { position: relative; min-height: 78vh; display: flex; align-items: center; overflow: hidden; padding: 150px 0 80px; background: var(--ink-deep); }
-  .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .hero-scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12,10,9,0.83), rgba(12,10,9,0.28)); }
-  .hero-content { position: relative; z-index: 1; width: 100%; }
-  .hero h1 { color: var(--white); max-width: 700px; font-size: clamp(2.7rem, 7vw, 5.2rem); line-height: 1.05; margin: 1.2rem 0; }
-  .hero h1 em { color: var(--gold-glow); font-weight: 400; }
-  .hero p { color: var(--white); font-size: clamp(1.1rem, 2vw, 1.3rem); max-width: 520px; margin-bottom: 2rem; }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
-  .choice { display: flex; flex-direction: column; align-items: flex-start; padding: clamp(1.6rem, 4vw, 3rem); min-height: 280px; background: var(--white); border: 1px solid var(--line); border-radius: 20px; transition: border-color 0.2s, transform 0.2s; }
-  .choice:hover { border-color: var(--gold); transform: translateY(-3px); }
-  .choice-number { font-size: 0.8rem; color: var(--accent); letter-spacing: 0.12em; }
-  .choice h3 { font-size: clamp(1.7rem, 3vw, 2.2rem); line-height: 1.1; margin: 0.8rem 0; }
-  .choice p { color: var(--stone); font-size: 1.05rem; max-width: 370px; margin-bottom: 1.5rem; }
-  .choice strong { margin-top: auto; font-size: 0.9rem; color: var(--accent); }
-  .rooms-link { margin-top: 2rem; text-align: center; color: var(--stone); }
-  .rooms-link a, .text-link { text-decoration: underline; text-underline-offset: 4px; font-weight: 500; }
-  .about-strip { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(2rem, 5vw, 5rem); }
-  .about-strip img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 18px; }
-  .about-strip h2, .contact-strip h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 1rem 0; }
-  .about-strip p, .contact-strip p { color: var(--stone); font-size: 1.08rem; margin-bottom: 1.3rem; }
-  .contact-strip { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
-  .contact-actions { display: flex; align-items: center; gap: 1.3rem; flex-wrap: wrap; }
-  @media (max-width: 760px) { .hero-img { object-position: 68% center; } .choices, .about-strip { grid-template-columns: 1fr; } .contact-strip { align-items: flex-start; flex-direction: column; } }
+  .home-hero{display:grid;grid-template-columns:minmax(0,46%) minmax(0,54%);min-height:680px;background:#f2efe8;padding-top:82px}.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(3rem,6vw,7rem) clamp(1.4rem,5.4vw,7rem);max-width:760px;margin-left:auto}.hero-copy h1{font-size:clamp(3.4rem,5.4vw,6.1rem);line-height:.99;margin:1.1rem 0 1.6rem;letter-spacing:-.055em;max-width:650px}.hero-copy h1 em{font-style:normal;color:var(--forest)}.hero-copy>p:not(.booking-note){font-size:clamp(1.1rem,1.5vw,1.3rem);max-width:550px;line-height:1.5}.hero-buttons{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}.booking-note{font-size:.86rem;color:var(--muted);margin-top:1rem}.hero-picture{position:relative;min-height:560px;overflow:hidden}.hero-picture img{width:100%;height:100%;object-fit:cover;object-position:center;position:absolute;inset:0}.photo-caption{position:absolute;right:1.5rem;bottom:1.5rem;background:rgba(255,255,255,.9);color:var(--ink);padding:.55rem .8rem;font-size:.75rem}
+  .booking-section{padding:6rem 0 5rem;background:var(--paper)}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:2rem}.section-heading h2,.story-copy h2,.day-grid h2,.visit-grid h2{font-size:clamp(2.4rem,4vw,4.1rem);line-height:1.05;letter-spacing:-.045em;margin:.65rem 0 0}.section-heading p{max-width:390px;color:var(--muted);font-size:1.03rem}.booking-routes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.booking-route{display:flex;flex-direction:column;border:1px solid var(--line);background:white;transition:transform .2s,border-color .2s}.booking-route:hover{transform:translateY(-4px);border-color:var(--forest)}.booking-route img{width:100%;aspect-ratio:1.36;object-fit:cover}.route-body{display:flex;flex-direction:column;padding:1.35rem 1.45rem 1.5rem;min-height:220px}.route-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--forest);font-weight:700}.route-body strong{font-family:var(--display);font-size:1.7rem;line-height:1.15;margin:.45rem 0;font-weight:700}.route-body>span:nth-child(3){color:var(--muted);line-height:1.4}.route-body b{margin-top:auto;padding-top:1rem;color:var(--forest);font-size:.9rem}.booking-assist{margin-top:1.5rem;color:var(--muted);font-size:.94rem}.booking-assist a{text-decoration:underline;text-underline-offset:4px;color:var(--forest);font-weight:700}
+  .home-story{padding:6rem 0;background:#e9e9df}.story-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(2rem,6vw,6rem);align-items:center}.story-photo img{width:100%;aspect-ratio:1.18;object-fit:cover}.story-copy p{font-size:1.08rem;color:var(--muted);margin:1.4rem 0;max-width:530px}.story-copy h2{max-width:550px}.day-in-space{padding:6rem 0;background:var(--paper)}.day-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,6vw,6rem);align-items:center}.day-grid p{max-width:460px;color:var(--muted);font-size:1.08rem;margin:1.4rem 0}.day-grid img{width:100%;aspect-ratio:1.45;object-fit:cover}.visit-bar{background:var(--forest);color:#fff;padding:4rem 0}.visit-grid{display:flex;justify-content:space-between;align-items:center;gap:2rem}.visit-grid p{margin:.9rem 0 0}.visit-actions{display:flex;align-items:center;gap:1.6rem}.visit-actions .btn-primary{background:#fff;color:var(--forest)}.visit-actions .inline-link{color:#fff}
+  .tour-section{padding:5rem 0;background:#e9e9df}.tour-heading{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:1.5rem}.tour-heading h2{font-size:clamp(2.2rem,4vw,3.6rem);letter-spacing:-.045em;margin:.6rem 0 0}.tour-heading p{max-width:350px;color:var(--muted)}.tour-section video{display:block;width:100%;aspect-ratio:16/9;background:#142b20;object-fit:cover;max-height:680px}
+  @media(max-width:850px){.home-hero{grid-template-columns:1fr;padding-top:72px}.hero-copy{margin:0;padding:3rem 1.35rem}.hero-picture{min-height:360px}.booking-routes{grid-template-columns:1fr}.booking-route{display:grid;grid-template-columns:42% 1fr}.booking-route img{height:100%;aspect-ratio:auto}.section-heading,.visit-grid,.tour-heading{align-items:start;flex-direction:column}.story-grid,.day-grid{grid-template-columns:1fr}.day-grid img{order:-1}}@media(max-width:560px){.hero-copy h1{font-size:3.5rem}.hero-picture{min-height:280px}.booking-section,.home-story,.day-in-space,.tour-section{padding:4rem 0}.booking-route{display:block}.booking-route img{aspect-ratio:1.6}.route-body{min-height:0}.route-body b{padding-top:.8rem}.visit-actions{flex-wrap:wrap}}
 </style>

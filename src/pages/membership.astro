@@ -21,6 +21,7 @@ const plans = [
 
   <section class="section light">
     <div class="wrap">
+      <div class="membership-intro"><img src="/img/approved/main-workspace.jpg" alt="People working together in The Common" loading="lazy" /><div><span class="eyebrow">Your regular place</span><h2>Familiar faces. Room to focus.</h2><p>Choose the desk plan that fits your month and make The Common part of your routine.</p></div></div>
       <div class="plan-heading">
         <h2>Monthly desk plans</h2>
         <p>Pick the number of days that fits your schedule. Three-month minimum, billed monthly.</p>
@@ -62,10 +63,11 @@ const plans = [
 </Base>
 
 <style>
+  .membership-intro{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,5vw,5rem);align-items:center;margin-bottom:4rem}.membership-intro img{width:100%;aspect-ratio:1.6;object-fit:cover}.membership-intro h2{font-size:clamp(2.2rem,4vw,3.6rem);letter-spacing:-.04em;margin:.7rem 0}.membership-intro p{color:var(--muted);font-size:1.08rem}
   .plan-heading { text-align: center; margin: 0 auto 2.2rem; }
   .plan-heading h2, .other-options h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; }
   .plan-heading p, .other-options p { font-size: 1.08rem; color: var(--stone); margin-top: 0.8rem; }
-  .plan-list { max-width: 760px; margin: 0 auto 2rem; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--white); }
+  .plan-list { max-width: 760px; margin: 0 auto 2rem; border: 1px solid var(--line); overflow: hidden; background: var(--white); }
   .plan-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.3rem 1.6rem; }
   .plan-row + .plan-row { border-top: 1px solid var(--line); }
   .plan-name { display: block; font-size: 0.72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; }
@@ -76,6 +78,6 @@ const plans = [
   .plan-note { text-align: center; margin-top: 0.9rem; color: var(--stone-soft); font-size: 0.9rem; }
   .other-options { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
   .other-options h2 { margin-top: 0.8rem; }
-  @media (max-width: 700px) { .other-options { align-items: flex-start; flex-direction: column; } }
+  @media (max-width: 700px) { .membership-intro{grid-template-columns:1fr}.other-options { align-items: flex-start; flex-direction: column; } }
   @media (max-width: 420px) { .plan-row { align-items: flex-start; flex-direction: column; gap: 0.5rem; } }
 </style>

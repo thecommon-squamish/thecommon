@@ -20,9 +20,10 @@ const HUBSPOT_FORM = '845c5505-46d2-4244-a0d2-ef7fb8345de9';
       <div>
         <span class="eyebrow">Where to find us</span>
         <h2 class="serif" style="font-size:clamp(1.8rem,4vw,2.6rem);margin:1rem 0 1.4rem;">Downtown Squamish.</h2>
-        <p class="c-row">📍 <span>38016 Cleveland Avenue,<br>Squamish, BC V8B 0A1</span></p>
-        <p class="c-row">✉️ <a href="mailto:welcome@thecommon.io">welcome@thecommon.io</a></p>
-        <p class="c-row">📞 <a href="tel:+17789060405">(778) 906-0405</a></p>
+        <p class="c-row"><strong>Visit</strong><span>38016 Cleveland Avenue,<br>Squamish, BC V8B 0A1</span></p>
+        <p class="c-row"><strong>Email</strong><a href="mailto:welcome@thecommon.io">welcome@thecommon.io</a></p>
+        <p class="c-row"><strong>Call</strong><a href="tel:+17789060405">(778) 906-0405</a></p>
+        <p class="book-direct">Ready to reserve a space? <a href="/spaces/">Book a room</a> or <a href="/day-pass/">book a desk</a> online.</p>
         <img class="photo" src="/img/common/photo-6.jpg" alt="The Common storefront on Cleveland Avenue" loading="lazy" style="margin-top:1.8rem;" />
         <div class="socials">
           <a href="https://www.instagram.com/thecommon.io/" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -51,13 +52,13 @@ const HUBSPOT_FORM = '845c5505-46d2-4244-a0d2-ef7fb8345de9';
 <style>
   .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 3.5rem; align-items: start; }
   @media (max-width: 820px) { .contact-grid { grid-template-columns: 1fr; } }
-  .c-row { display: flex; gap: 0.7rem; font-size: 1.05rem; color: var(--stone); margin-bottom: 0.9rem; align-items: flex-start; }
+  .c-row { display: flex; gap: 0.7rem; font-size: 1.05rem; color: var(--stone); margin-bottom: 0.9rem; align-items: flex-start; }.c-row strong{min-width:3.7rem;color:var(--forest);font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;padding-top:.1rem}.book-direct{margin-top:1.5rem;color:var(--muted)}.book-direct a{color:var(--forest);text-decoration:underline;text-underline-offset:3px;font-weight:700}
   .c-row a { text-decoration: underline; text-underline-offset: 3px; }
   .socials { display: flex; gap: 1.4rem; margin-top: 1.6rem; }
   .socials a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
-  .socials a:hover { color: var(--gold); }
+  .socials a:hover { text-decoration:underline; }
 
-  .form-card { background: var(--white); border: 1px solid var(--line); border-radius: 20px; padding: 2.2rem; box-shadow: 0 18px 44px -28px rgba(28,25,23,0.4); }
+  .form-card { background: var(--white); border: 1px solid var(--line); padding: 2.2rem; }
   .form-card h3 { font-size: 1.5rem; margin-bottom: 1.4rem; }
   .form-intro { color: var(--stone); margin: -0.5rem 0 1.4rem; }
   .form-intro a { text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }

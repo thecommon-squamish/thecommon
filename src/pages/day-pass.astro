@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 
 const DAY_PASS = 'https://e-commerce.officernd.com/thecommon/plans/685a4f6beefbc2e8fa8b62f4';
-const HOURLY_DESK = 'https://e-commerce.officernd.com/thecommon/search-results?type=offices&listingType=resource';
+const HOURLY_DESK = 'https://e-commerce.officernd.com/thecommon/resources/685a4f6aeefbc2e8fa8b62ce';
 ---
 <Base current="day-pass" title="Book a desk — The Common Squamish" description="Book a coworking desk in Squamish. Choose a $37 day pass or an hourly desk from $6.50 per hour.">
   <header class="page-hd">
@@ -16,6 +16,7 @@ const HOURLY_DESK = 'https://e-commerce.officernd.com/thecommon/search-results?t
 
   <section class="section light">
     <div class="wrap">
+      <div class="desk-intro"><div><span class="eyebrow">A real place to get things done</span><h2>Pick a desk. Settle in.</h2><p>Work beside other people, with room to focus and a kitchen when you need a break.</p></div><img src="/img/approved/hot-desks.jpg" alt="Ready-to-use desks at The Common" loading="lazy" /></div>
       <div class="booking-grid">
         <article class="booking-card">
           <span class="eyebrow">Stay for the day</span>
@@ -49,8 +50,9 @@ const HOURLY_DESK = 'https://e-commerce.officernd.com/thecommon/search-results?t
 </Base>
 
 <style>
-  .booking-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
-  .booking-card { display: flex; flex-direction: column; align-items: flex-start; background: var(--white); border: 1px solid var(--line); border-radius: 22px; padding: clamp(1.6rem, 4vw, 3rem); }
+  .desk-intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,5rem);align-items:center;margin-bottom:3rem}.desk-intro h2{font-size:clamp(2.2rem,4vw,3.6rem);letter-spacing:-.04em;margin:.7rem 0}.desk-intro p{color:var(--muted);font-size:1.08rem}.desk-intro img{width:100%;aspect-ratio:1.6;object-fit:cover}
+  .booking-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .booking-card { display: flex; flex-direction: column; align-items: flex-start; background: var(--white); border: 1px solid var(--line); padding: clamp(1.6rem, 4vw, 3rem); }
   .booking-card h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 1rem 0; }
   .booking-card p:not(.price) { font-size: 1.05rem; color: var(--stone); margin-bottom: 2rem; }
   .booking-card .price { font-family: var(--serif); font-size: 2rem; line-height: 1.2; margin-bottom: 0.9rem; }
@@ -61,5 +63,5 @@ const HOURLY_DESK = 'https://e-commerce.officernd.com/thecommon/search-results?t
   .next-step { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
   .next-step h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0.7rem 0; }
   .next-step p { color: var(--stone); }
-  @media (max-width: 760px) { .booking-grid { grid-template-columns: 1fr; } .next-step { align-items: flex-start; flex-direction: column; } }
+  @media (max-width: 760px) { .desk-intro,.booking-grid { grid-template-columns: 1fr; } .next-step { align-items: flex-start; flex-direction: column; } }
 </style>

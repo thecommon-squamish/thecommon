@@ -1,35 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base current="about" title="About The Common — Coworking in Squamish" description="Get to know The Common, a welcoming coworking space in downtown Squamish.">
-  <header class="page-hd">
-    <div class="mesh" aria-hidden="true"></div>
-    <div class="wrap">
-      <span class="eyebrow on-dark">About The Common</span>
-      <h1>Space to work. <em class="shimmer">People to meet.</em></h1>
-      <p>The Common is a coworking space in downtown Squamish. Come to focus, stay to connect.</p>
-    </div>
-  </header>
-
-  <section class="section light">
-    <div class="wrap split">
-      <img class="photo" src="/img/common/photo-2.jpg" alt="Desks and plants inside The Common" />
-      <div>
-        <span class="eyebrow">The space</span>
-        <h2>Come as you are.</h2>
-        <p>Whether you need a desk for an hour, a day, or every week, The Common gives you a welcoming place to get things done alongside other people.</p>
-        <div class="actions">
-          <a class="btn btn-ink" href="/day-pass/">Book a desk</a>
-          <a class="text-link" href="/membership/">See memberships →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<Base current="about" title="Our story | The Common Squamish" description="The Common brings people together around good work, shared space, and community in downtown Squamish.">
+  <header class="page-hd"><div class="wrap"><span class="eyebrow on-dark">Our story</span><h1>Work together.<br />Grow together.</h1><p>A place to focus, find your people, and feel part of Squamish.</p></div></header>
+  <section class="section light"><div class="wrap split"><div><span class="kicker">Why The Common exists</span><h2>Built for the connection that happens around the work.</h2><p>The Common began with a simple idea: people need a good place to work, and they need one another. The desks and rooms matter, but so do the conversations in the kitchen, the introductions, and the people who make the space their own.</p><p>Our home on Cleveland Avenue brings independent workers, small teams, and local businesses into the same room. Come for a focused hour or make it part of your regular week.</p><a class="inline-link" href="/community/">How we build community ↗</a></div><img class="photo" src="/img/approved/shared-table.jpg" alt="People working together around a table at The Common" loading="lazy" /></div></section>
+  <section class="section warm"><div class="wrap split"><img class="photo" src="/img/approved/kitchen.jpg" alt="Kitchen and lounge at The Common" loading="lazy" /><div><span class="kicker">A day here</span><h2>Space for work and everything around it.</h2><p>Settle into a desk with a monitor, book a room when you need privacy, make lunch in the kitchen, or step into the courtyard for a break. The indoor phone booth is there for short calls.</p><p>Membership can be flexible because workdays are not all the same. If you are new to Squamish or just passing through, you can start with a day or an hour.</p><a class="inline-link" href="/day-pass/">Find a desk ↗</a></div></div></section>
+  <section class="section light"><div class="wrap statement"><span class="kicker">From Squamish, for Squamish</span><h2>Community is something we do.</h2><p>The Common’s original vision drew on the idea of social capital: giving time, sharing skills, and making useful connections. Social lunches, gatherings, and support for local groups have all been part of that story. We’re keeping it visible as this site evolves.</p><a class="btn btn-secondary" href="/community/">Read about our community work ↗</a></div></section>
 </Base>
-
-<style>
-  h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 1rem 0; }
-  p { color: var(--stone); font-size: 1.08rem; margin-bottom: 1.7rem; }
-  .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.3rem; }
-  .text-link { text-decoration: underline; text-underline-offset: 4px; font-weight: 500; }
-</style>
+<style>.split h2,.statement h2{font-size:clamp(2rem,4vw,3.4rem);letter-spacing:-.04em;margin:.8rem 0 1.3rem}.split p,.statement p{font-size:1.08rem;color:var(--muted);margin-bottom:1.2rem}.split .photo{aspect-ratio:1.2}.statement{max-width:850px;text-align:center}.statement p{max-width:720px;margin:0 auto 1.8rem}</style>

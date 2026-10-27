@@ -1,9 +1,10 @@
 ---
 const { current = '' } = Astro.props;
 const links = [
-  { href: '/day-pass/', label: 'Day pass & hourly', key: 'day-pass' },
-  { href: '/membership/', label: 'Membership', key: 'membership' },
-  { href: '/spaces/', label: 'Bookable rooms', key: 'spaces' },
+  { href: '/spaces/', label: 'Rooms', key: 'spaces' },
+  { href: '/day-pass/', label: 'Desks', key: 'day-pass' },
+  { href: '/membership/', label: 'Memberships', key: 'membership' },
+  { href: '/about/', label: 'Our story', key: 'about' },
   { href: '/contact/', label: 'Contact', key: 'contact' },
 ];
 ---
@@ -17,14 +18,13 @@ const links = [
         <li><a href={l.href} aria-current={current === l.key ? 'page' : undefined}>{l.label}</a></li>
       ))}
     </ul>
-    <a class="nav-cta" href="/day-pass/">Book a desk</a>
+    <a class="nav-cta" href="/spaces/">Book a space ↗</a>
     <details class="mobile-menu">
       <summary>Menu</summary>
       <ul>
         {links.map((l) => (
           <li><a href={l.href} aria-label={l.label} aria-current={current === l.key ? 'page' : undefined}>{l.label}</a></li>
         ))}
-        <li><a href="/about/" aria-label="About The Common">About The Common</a></li>
       </ul>
     </details>
   </div>

@@ -1,26 +1,40 @@
-# The Common website preview
+# The Common website redesign
 
-This Astro site is a public preview of The Common's proposed simpler website. The existing WordPress site at `thecommon.io` remains live. The approved design and content will be rebuilt in WordPress so Peter can edit it there.
+This Astro repository is the review version of The Common's proposed website. The current WordPress site at `thecommon.io` and Sally's unused WordPress site at `dev.thecommon.io` remain separate. This repository does not change either of them.
+
+## Direction
+
+- Lead with booking: room, desk, then ongoing membership or private office.
+- Use the approved photography and walkthrough video to show the real space.
+- Keep the story of The Common, its Squamish community, and its social capital roots on dedicated pages.
+- Send visitors to the matching OfficeRnD resource page for each bookable room. The indoor phone booth is for short calls; it is not sold as a room.
+- Treat OfficeRnD as the source of truth for live availability and prices. Membership requests may still require approval.
 
 ## Pages
 
-- Home: routes visitors to desk booking, memberships, meeting rooms, and contact.
-- Day pass & hourly: links to the matching OfficeRnD booking pages.
-- Membership: lists current desk plans and links to OfficeRnD's approval-based request flow.
-- Meeting rooms: links to OfficeRnD room listings; private office and event inquiries go to Contact.
-- About and Contact: short introduction, business details, and the existing HubSpot inquiry form.
+- `/` — direct booking choices, an introduction to the space, and the walkthrough.
+- `/spaces/` — Micro Office, Trailer, and Small Conference Room, each linked to its own OfficeRnD listing.
+- `/day-pass/` — day pass and hourly desk links.
+- `/membership/` — monthly desk plans and a private office inquiry route.
+- `/about/` and `/community/` — the original site's purpose, people, and community work.
+- `/contact/` — address and inquiry form.
 
-Prices, terms, and OfficeRnD booking details can change. Check them against OfficeRnD before using this content in the WordPress rebuild. The HubSpot form fields are configured in HubSpot, not this repository.
-
-## Local preview
+## Local review
 
 ```bash
 npm ci
 npm run dev
+npm run build
 ```
 
-`npm run build` creates static files in `dist/`. Every push to `main` publishes a review copy at `https://thecommon-squamish.github.io/thecommon/`. The GitHub Pages workflow adjusts internal paths for that preview and builds with `PUBLIC_SITE_PREVIEW=true` so search engines are asked not to index it and preview visits do not enter the live site's Google Analytics property.
+The public GitHub Pages preview is a review copy. It does not replace `thecommon.io`.
 
-The site source lives in `src/pages/`, with shared navigation and footer in `src/components/`, shared styling in `src/styles/global.css`, and images in `public/img/`. Archived experiments are in `_archive/` and are not part of the site.
+## Before launch
 
-Do not point `thecommon.io` to this preview. The WordPress launch will need its own staging review, full backup of the current site, redirects from useful old URLs, and a final check of booking and contact flows.
+1. Review the design, room descriptions, story, and community page with Peter. Confirm which monthly private offices and event bookings should be available online.
+2. Confirm OfficeRnD inventory, room capacities, terms, day pass details, and the desired approval rules. Its day pass description currently contains conflicting meeting-credit amounts; the website deliberately omits that claim.
+3. Decide whether the approved site will remain Astro or be rebuilt in WordPress. Either route needs a staging review, a current-site backup, and a cutover plan.
+4. Inventory useful URLs from the live and dev sites. Move approved content into the new pages and redirect old URLs when the domain switches, so existing bookmarks and search links still work.
+5. Check booking, contact, video, mobile layout, accessibility, and analytics on the staging domain before switching the main domain.
+
+Source pages are in `src/pages/`, shared layout in `src/layouts/`, styles in `src/styles/`, and approved images and video in `public/`.
