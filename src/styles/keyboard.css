@@ -140,32 +140,12 @@ main a:not(.btn):not(.booking-route):not(:has(img)),
 .footer .footer-column a,
 .footer .footer-quiet-link { color: var(--key-ink); }
 
-.booking-section .wrap { position: relative; }
-.booking-mouse {
-  position: absolute;
-  width: 54px;
-  height: auto;
-  right: 0;
-  top: -5.5rem;
-  transform: rotate(14deg);
-  filter: drop-shadow(4px 7px 4px #24362726);
-  pointer-events: none;
-}
-.mouse-cord { fill: none; stroke: #24543e; stroke-width: 3; stroke-linecap: round; }
-.mouse-base { fill: #f5f0e4; stroke: #24543e; stroke-width: 3; }
-.mouse-seam { fill: none; stroke: #a7b1a3; stroke-width: 2; }
-.mouse-wheel { fill: #df795e; }
-
 @media (max-width: 1180px) {
   .nav-menu { display: none; }
   .mobile-menu { display: block; }
   .nav-cta { margin-left: auto; }
 }
-@media (max-width: 850px) {
-  .booking-mouse { right: 1.5rem; top: -3.5rem; width: 50px; opacity: .68; }
-}
 @media (max-width: 560px) {
-  .booking-mouse { display: none; }
   .nav-cta { min-height: 43px; padding: .55rem .75rem .76rem; }
   .btn { min-height: 47px; }
 }
