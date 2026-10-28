@@ -15,8 +15,7 @@
 .faq-list summary,
 main a:not(.btn):not(.booking-route):not(:has(img)),
 .footer-column a,
-.footer-quiet-link,
-.booking-section .booking-route .route-body b {
+.footer-quiet-link {
   position: relative;
   isolation: isolate;
   display: inline-flex;
@@ -50,8 +49,7 @@ main a:not(.btn):not(.booking-route):not(:has(img)),
 .faq-list summary::before,
 main a:not(.btn):not(.booking-route):not(:has(img))::before,
 .footer-column a::before,
-.footer-quiet-link::before,
-.booking-section .booking-route .route-body b::before {
+.footer-quiet-link::before {
   content: none;
 }
 
@@ -63,8 +61,7 @@ main a:not(.btn):not(.booking-route):not(:has(img))::before,
 .faq-list summary:hover,
 main a:not(.btn):not(.booking-route):not(:has(img)):hover,
 .footer-column a:hover,
-.footer-quiet-link:hover,
-.booking-section .booking-route:hover .route-body b {
+.footer-quiet-link:hover {
   color: #103a28;
   text-decoration: none;
   transform: translateY(-2px);
@@ -80,8 +77,7 @@ main a:not(.btn):not(.booking-route):not(:has(img)):hover,
 .faq-list summary:active,
 main a:not(.btn):not(.booking-route):not(:has(img)):active,
 .footer-column a:active,
-.footer-quiet-link:active,
-.booking-section .booking-route:active .route-body b {
+.footer-quiet-link:active {
   transform: translateY(6px);
   box-shadow: inset 2px 2px 3px #aaa89d99, inset -1px -1px 2px #fff8,
     0 1px 0 #77766f, 0 2px 3px var(--key-shadow);
@@ -129,7 +125,6 @@ main a:not(.btn):not(.booking-route):not(:has(img)),
 .footer-column a,
 .footer-quiet-link { align-self: flex-start; border-bottom: 1px solid #94938d !important; }
 .footer-quiet-link span { color: #a14f32 !important; }
-.booking-section .booking-route .route-body b { align-self: flex-start; margin-top: auto; font-size: .9rem; }
 .faq-booking-actions { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1rem; }
 
 /* Keep the face light against dark photographs and the green footer. */
