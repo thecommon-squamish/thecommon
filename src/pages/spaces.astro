@@ -20,6 +20,7 @@ const rooms = [
   .rooms-intro{margin-bottom:2.5rem}.rooms-intro h2{font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.04em;margin-bottom:.6rem}.rooms-intro p,.system-note,.other-options p{color:var(--muted)}
   .room-list{display:grid;gap:3.4rem}
   .room{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(1.5rem,4vw,4rem);align-items:center;border-bottom:1px solid var(--line);padding:1rem 0 3.4rem}
+  .room:nth-child(even){grid-template-columns:minmax(0,.65fr) minmax(0,1.35fr)}
   .room-photo{padding:10px;background:#fff;box-shadow:16px 16px 0 #d9e0d4,0 22px 34px #1d35282e;transform:rotate(-.7deg)}
   .room-photo img{display:block;width:100%;height:auto;object-fit:contain}
   .room:nth-child(even) .room-photo{order:2;transform:rotate(.7deg);box-shadow:-16px 16px 0 #ded2c0,0 22px 34px #1d35282e}
@@ -27,5 +28,5 @@ const rooms = [
   .room-copy h3{font-size:clamp(2rem,3.5vw,3rem);letter-spacing:-.04em;margin:.5rem 0 1rem}
   .room-copy p{font-size:1.08rem;color:var(--muted);max-width:450px}.room-copy .btn{margin-top:1rem}
   .system-note{font-size:.92rem;margin:1.5rem 0 0}.other-options{display:flex;align-items:center;justify-content:space-between;gap:2rem}.other-options h2{font-size:clamp(1.9rem,3vw,3rem);margin:.5rem 0}.other-options p{margin:0}
-  @media(max-width:750px){.room{grid-template-columns:1fr;gap:1rem}.room:nth-child(even) .room-photo{order:0}.room-photo,.room:nth-child(even) .room-photo{transform:none;box-shadow:10px 10px 0 #d9e0d4}.room-copy{padding:1.5rem .5rem 1rem}.other-options{align-items:start;flex-direction:column}}
+  @media(max-width:750px){.room,.room:nth-child(even){grid-template-columns:1fr;gap:1rem}.room:nth-child(even) .room-photo{order:0}.room-photo,.room:nth-child(even) .room-photo{transform:none;box-shadow:10px 10px 0 #d9e0d4}.room-copy{padding:1.5rem .5rem 1rem}.other-options{align-items:start;flex-direction:column}}
 </style>
