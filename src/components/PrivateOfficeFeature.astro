@@ -7,18 +7,18 @@ const email = 'mailto:welcome@thecommon.io?subject=Monthly%20private%20office%20
 <section class="private-office-section" id="private-office" aria-labelledby="private-office-title">
   <div class="wrap private-office-layout">
     <div class="private-office-photo">
-      <img src="/img/approved/private-office.jpg" alt="Bright private office at The Common with blue doors, a desk, and a view toward the courtyard" loading="lazy" />
+      <img src="/img/approved/private-office.jpg" alt="One of the monthly private offices at The Common, furnished with a desk and chair" loading="lazy" />
     </div>
     <div class="private-office-copy">
       <span class="kicker">Monthly private offices</span>
       <h2 id="private-office-title">A workspace of your own.</h2>
-      <p>The blue-door office has space to settle in and work, with The Common just outside. Private offices are arranged on a monthly basis.</p>
+      <p>Settle into a private workspace and make it your own. Our offices are rented by the month, with the shared spaces and community of The Common close by.</p>
       <p class="office-availability" data-office-availability={privateOfficeAvailability}>
         <span class="availability-dot" aria-hidden="true"></span>
         {isAvailable ? 'Available now' : 'Ask us about current availability'}
       </p>
       <p class="office-availability-note">We confirm openings, terms, and pricing directly with you.</p>
-      <a class="btn btn-primary" href={email}>{isAvailable ? 'Ask about this office' : 'Check monthly availability'}</a>
+      <a class="btn btn-primary" href={email}>{isAvailable ? 'Ask about an office' : 'Check monthly availability'}</a>
     </div>
   </div>
 </section>
