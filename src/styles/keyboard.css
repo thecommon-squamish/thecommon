@@ -143,10 +143,10 @@ main a:not(.btn):not(.booking-route):not(:has(img)),
 .booking-section .wrap { position: relative; }
 .booking-mouse {
   position: absolute;
-  width: 82px;
+  width: 54px;
   height: auto;
-  right: 2.5rem;
-  top: -2.2rem;
+  right: 0;
+  top: -5.5rem;
   transform: rotate(14deg);
   filter: drop-shadow(4px 7px 4px #24362726);
   pointer-events: none;
@@ -162,7 +162,7 @@ main a:not(.btn):not(.booking-route):not(:has(img)),
   .nav-cta { margin-left: auto; }
 }
 @media (max-width: 850px) {
-  .booking-mouse { right: 1.5rem; top: -2rem; width: 64px; opacity: .68; }
+  .booking-mouse { right: 1.5rem; top: -3.5rem; width: 50px; opacity: .68; }
 }
 @media (max-width: 560px) {
   .booking-mouse { display: none; }
