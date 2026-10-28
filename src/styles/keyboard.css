@@ -25,15 +25,17 @@ main a:not(.btn):not(.booking-route):not(:has(img)),
   max-width: 100%;
   min-height: 43px;
   padding: .67rem .98rem .85rem;
-  border: 1px solid #94938d;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #efeee9 0%, #c7c5bd 37%, #a7a59e 63%, #777770 100%);
-  box-shadow: 0 3px 0 #6c6b65, 0 7px 0 #585950, 0 11px 13px var(--key-shadow);
+  border: 1px solid #a5a39b;
+  border-radius: 8px;
+  background: linear-gradient(152deg, #faf9f4 0%, #f2f1eb 50%, #e7e5dc 100%);
+  box-shadow: inset 2px 2px 2px #fff, inset -3px -4px 3px #96958a85,
+    0 3px 0 #77766f, 0 7px 0 #5c5c55, 0 11px 13px var(--key-shadow);
   color: var(--key-ink);
   text-align: center;
   text-decoration: none !important;
-  font-weight: 700;
+  font-weight: 650;
   line-height: 1.25;
+  text-shadow: none;
   vertical-align: middle;
   cursor: pointer;
   transform: translateY(0);
@@ -50,15 +52,7 @@ main a:not(.btn):not(.booking-route):not(:has(img))::before,
 .footer-column a::before,
 .footer-quiet-link::before,
 .booking-section .booking-route .route-body b::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset: 4px 6px 9px;
-  border: 1px solid #fff8;
-  border-radius: 6px;
-  background: linear-gradient(145deg, #f8f8f4 0%, var(--key-face) 63%, #deddd6 100%);
-  box-shadow: inset 0 1px 1px #fff, inset 0 -1px 1px #98988e42;
-  pointer-events: none;
+  content: none;
 }
 
 .btn:hover,
@@ -74,7 +68,8 @@ main a:not(.btn):not(.booking-route):not(:has(img)):hover,
   color: #103a28;
   text-decoration: none;
   transform: translateY(-2px);
-  box-shadow: 0 5px 0 #6c6b65, 0 9px 0 #585950, 0 14px 16px var(--key-shadow);
+  box-shadow: inset 2px 2px 2px #fff, inset -3px -4px 3px #96958a85,
+    0 5px 0 #77766f, 0 9px 0 #5c5c55, 0 14px 16px var(--key-shadow);
 }
 
 .btn:active,
@@ -88,7 +83,8 @@ main a:not(.btn):not(.booking-route):not(:has(img)):active,
 .footer-quiet-link:active,
 .booking-section .booking-route:active .route-body b {
   transform: translateY(6px);
-  box-shadow: 0 1px 0 #6c6b65, 0 2px 3px var(--key-shadow);
+  box-shadow: inset 2px 2px 3px #aaa89d99, inset -1px -1px 2px #fff8,
+    0 1px 0 #77766f, 0 2px 3px var(--key-shadow);
 }
 
 .btn:focus-visible,
@@ -142,7 +138,7 @@ main a:not(.btn):not(.booking-route):not(:has(img)),
 .visit-actions .btn-primary,
 .workday-content .btn-primary,
 .footer .footer-actions .btn-gold {
-  background: linear-gradient(135deg, #efeee9 0%, #c7c5bd 37%, #a7a59e 63%, #777770 100%);
+  background: linear-gradient(152deg, #faf9f4 0%, #f2f1eb 50%, #e7e5dc 100%);
   color: var(--key-ink);
   border-color: #94938d;
 }
