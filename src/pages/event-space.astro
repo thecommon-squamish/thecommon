@@ -23,14 +23,14 @@ const prints = [
 ];
 ---
 <Base current="event-space" title="Events at The Common | Squamish" description="Host a gathering, workshop, or community event at The Common in downtown Squamish. Tell us what you are planning.">
-  <header class="page-hd"><div class="wrap"><span class="eyebrow on-dark">Events at The Common</span><h1>Bring your group<br />to The Common.</h1><p>We host workshops, meetups, and community events in downtown Squamish.</p></div></header>
+  <header class="page-hd"><div class="wrap"><span class="eyebrow on-dark">Events at The Common</span><h1>Bring your group<br />to The Common.</h1><p>Got a talk, meetup, film night, or workshop in mind? Let's make room for it in downtown Squamish.</p></div></header>
 
   <section class="section light event-intro">
     <div class="wrap event-showcase">
       <div class="event-copy">
         <span class="kicker">Plan an event</span>
-        <h2>Make room for something good.</h2>
-        <p>Bring people together for a talk, a film, a workshop, or a night to catch up. The main room, kitchen, and courtyard can all be part of the plan.</p>
+        <h2>Good ideas need a place to meet.</h2>
+        <p>Bring people together for a talk, a film, a workshop, or a night to catch up. We've even planned air hockey with local election candidates. The main room, kitchen, and courtyard can all be part of your plan.</p>
         <p>Send us your preferred date, the number of people, and a short description. We'll confirm the layout, timing, equipment, and price with you.</p>
         <a class="btn btn-primary" href="mailto:welcome@thecommon.io?subject=Event%20at%20The%20Common">Email us about an event</a>
       </div>
@@ -40,7 +40,7 @@ const prints = [
 
   <section class="section warm past-events">
     <div class="wrap">
-      <div class="past-heading"><h2>Good things have happened here.</h2></div>
+      <div class="past-heading"><h2>People have made this place their own.</h2></div>
       <div class="event-wall" role="img" aria-label="A scattered stack of distinct event photos and scenes inspired by The Common">
         {prints.map(([photo, x, y, width, height, angle, layer, mobileX, mobileY], index) =>
           <div class="event-print" style={`--x:${x}%;--y:${y}%;--w:${width}%;--h:${height}%;--r:${angle}deg;--z:${layer};--mx:${mobileX}%;--my:${mobileY}%;--crop:${index % 3 === 0 ? '60%' : '50%'}`}>
@@ -51,7 +51,7 @@ const prints = [
     </div>
   </section>
 
-  <section class="section light"><div class="wrap event-grid"><article><span class="kicker">Smaller meetings</span><h2>Book a room online.</h2><p>The Small Conference Room, Trailer, and Micro Office each have their own booking page.</p><a class="inline-link" href="/spaces/">See the rooms</a></article><article><span class="kicker">Community groups</span><h2>Planning a local event?</h2><p>The Common has supported nonprofit and community gatherings. Tell us what you're organizing and we'll let you know what is possible.</p><a class="inline-link" href="/community/">Read about our community work</a></article></div></section>
+  <section class="section light"><div class="wrap event-grid"><article><span class="kicker">Smaller meetings</span><h2>Book a room online.</h2><p>The Small Conference Room, Trailer, and Micro Office each have their own booking page.</p><a class="inline-link" href="/spaces/">See the rooms</a></article><article><span class="kicker">Community groups</span><h2>Putting something on for Squamish?</h2><p>The Common has made space for local groups and nonprofits before. Tell us what you're organizing and we'll talk about what could work now.</p><a class="inline-link" href="/community/">How The Common has helped</a></article></div></section>
 </Base>
 
 <style>

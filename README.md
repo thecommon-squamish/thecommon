@@ -16,7 +16,8 @@ This Astro repository is the review version of The Common's proposed website. Th
 - `/spaces/` — Micro Office, Trailer, and Small Conference Room, each linked to its own OfficeRnD listing.
 - `/day-pass/` — day pass and hourly desk links.
 - `/membership/` — monthly desk plans and a private office inquiry route.
-- `/about/` and `/community/` — the original site's purpose, people, and community work.
+- `/about/` and `/community/` — the original site's purpose, people, Squamish history, and community work.
+- `/stories/first-weeks/` and `/stories/community-programs/` — historical stories carried onto this site so they do not depend on the old WordPress URLs.
 - `/event-space/` — an inquiry path for larger gatherings, using the dev site's event intent without its stale pricing.
 - `/faq/` — booking, arrival, calls, dogs, kitchen, and invoices, based on the live site's visitor guidance.
 - `/contact/` — address and inquiry form.
@@ -33,14 +34,16 @@ This Astro repository is the review version of The Common's proposed website. Th
 | Old path | New path |
 | --- | --- |
 | `/faqs-meeting-rooms-dogs/` and `/frequently-asked-questions/` | `/faq/` |
-| `/community_grant/` | `/community/` |
+| `/community_grant/` | `/stories/community-programs/` |
 | `/drop-in-bookings/` | `/day-pass/` |
 | `/individual-memberships/`, `/membership-teams/`, `/memberships/` | `/membership/` |
 | `/event-venue/` | `/event-space/` |
 | `/about-the-common/` | `/about/` |
 | `/contact-us/` | `/contact/` |
 
-Preserve the five old `/news/` URLs in a dated archive or redirect them only after Peter decides whether those historical stories should remain public. The live `/jobs/` posting also needs a current hiring decision before cutover. Do not redirect the April Fools `/outdoors/` page to a bookable outdoor office.
+Redirect `/news/november-2017/` to `/stories/first-weeks/` and `/community_grant/` to `/stories/community-programs/` at cutover. The other old `/news/` URLs need an archive or reviewed redirects to the relevant history on `/about/`. The live `/jobs/` posting needs a current hiring decision before cutover. Do not redirect the April Fools `/outdoors/` page to a bookable outdoor office.
+
+The source-by-source editorial audit and voice rules are in [docs/original-site-editorial-audit.md](docs/original-site-editorial-audit.md).
 
 ## Local review
 
