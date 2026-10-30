@@ -1,14 +1,21 @@
 ---
 const { current = '' } = Astro.props;
-const links = [
-  { href: '/spaces/', label: 'Rooms', key: 'spaces' },
-  { href: '/day-pass/', label: 'Desks', key: 'day-pass' },
-  { href: '/membership/', label: 'Memberships', key: 'membership' },
-  { href: '/membership/#private-office', label: 'Offices', key: 'offices' },
-  { href: '/event-space/', label: 'Events', key: 'event-space' },
-  { href: '/about/', label: 'Our story', key: 'about' },
-  { href: '/faq/', label: 'FAQs', key: 'faq' },
-  { href: '/contact/', label: 'Contact', key: 'contact' },
+const groups = [
+  { label: 'Workspaces', links: [
+    { href: '/spaces/', label: 'Rooms', key: 'spaces' },
+    { href: '/day-pass/', label: 'Desks', key: 'day-pass' },
+    { href: '/membership/#private-office', label: 'Private offices', key: 'offices' },
+    { href: '/membership/', label: 'Memberships', key: 'membership' },
+  ] },
+  { label: 'Community', links: [
+    { href: '/event-space/', label: 'Events', key: 'event-space' },
+    { href: '/about/', label: 'Our story', key: 'about' },
+    { href: '/community/', label: 'Community', key: 'community' },
+  ] },
+  { label: 'Help', links: [
+    { href: '/faq/', label: 'FAQs', key: 'faq' },
+    { href: '/contact/', label: 'Contact', key: 'contact' },
+  ] },
 ];
 ---
 <nav class="nav" aria-label="Primary">
@@ -17,16 +24,20 @@ const links = [
       <img src="/img/logo-white.png" alt="The Common Squamish" />
     </a>
     <ul class="nav-menu">
-      {links.map((l) => (
-        <li><a href={l.href} aria-current={current === l.key ? 'page' : undefined}>{l.label}</a></li>
+      {groups.map((group) => (
+        <li><details class="nav-group"><summary>{group.label}</summary><div class="nav-submenu">
+          {group.links.map((l) => <a href={l.href} aria-current={current === l.key ? 'page' : undefined}>{l.label}</a>)}
+        </div></details></li>
       ))}
     </ul>
     <a class="nav-cta" href="/spaces/"><span class="nav-cta-full">Book a space</span><span class="nav-cta-short">Book</span></a>
     <details class="mobile-menu">
       <summary>Menu</summary>
       <ul>
-        {links.map((l) => (
-          <li><a href={l.href} aria-label={l.label} aria-current={current === l.key ? 'page' : undefined}>{l.label}</a></li>
+        {groups.map((group) => (
+          <li class="mobile-menu-group"><span>{group.label}</span>
+            {group.links.map((l) => <a href={l.href} aria-current={current === l.key ? 'page' : undefined}>{l.label}</a>)}
+          </li>
         ))}
       </ul>
     </details>
