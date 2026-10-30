@@ -43,3 +43,60 @@ const groups = [
     </details>
   </div>
 </nav>
+
+<script>
+  const nav = document.querySelector<HTMLElement>('.nav');
+  const groups = Array.from(nav?.querySelectorAll<HTMLDetailsElement>('.nav-group') ?? []);
+  const mobileMenu = nav?.querySelector<HTMLDetailsElement>('.mobile-menu');
+
+  const closeGroups = (except?: HTMLDetailsElement) => {
+    groups.forEach((group) => {
+      if (group !== except) group.open = false;
+    });
+  };
+
+  groups.forEach((group) => {
+    const trigger = group.querySelector('summary');
+    if (!trigger) return;
+
+    group.addEventListener('pointerenter', (event) => {
+      if (event.pointerType !== 'mouse') return;
+      closeGroups(group);
+      group.open = true;
+    });
+
+    group.addEventListener('pointerleave', (event) => {
+      if (event.pointerType === 'mouse') group.open = false;
+    });
+
+    trigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      const pointerType = event instanceof PointerEvent ? event.pointerType : '';
+      const toggle = pointerType !== 'mouse';
+      const wasOpen = group.open;
+      closeGroups(group);
+      group.open = toggle ? !wasOpen : true;
+    });
+
+    group.addEventListener('focusout', (event) => {
+      if (!group.contains(event.relatedTarget as Node | null)) group.open = false;
+    });
+  });
+
+  document.addEventListener('pointerdown', (event) => {
+    if (!nav?.contains(event.target as Node)) {
+      closeGroups();
+      if (mobileMenu) mobileMenu.open = false;
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    const openGroup = groups.find((group) => group.open);
+    closeGroups();
+    if (mobileMenu?.open) mobileMenu.open = false;
+    openGroup?.querySelector('summary')?.focus();
+  });
+
+  window.addEventListener('scroll', () => closeGroups(), { passive: true });
+</script>
