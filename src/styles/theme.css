@@ -1,0 +1,124 @@
+/* The digital workspace: warm paper, clear filing rules, tactile actions. */
+:root {
+  --paper: #f7f5ef;
+  --paper-warm: #ebece3;
+  --line: #cfd5c9;
+  --muted: #47574e;
+  --rule: #adbaaa;
+  --surface: #fffdf8;
+  --office-shadow: 0 12px 28px #20372917;
+}
+body { background: var(--paper); }
+main { isolation: isolate; }
+main p { max-width: 72ch; }
+.section, .booking-section, .home-story, .day-in-space, .tour-section { position: relative; }
+.section-head, .section-heading, .tour-heading, .rooms-intro, .plan-heading, .past-heading {
+  padding-bottom: clamp(1rem, 2vw, 1.5rem);
+  border-bottom: 1px solid var(--rule);
+}
+.kicker, .eyebrow, .route-label, .plan-name, .footer-kicker {
+  font-family: 'Courier Prime', 'American Typewriter', monospace;
+  letter-spacing: .065em;
+  font-size: .8rem;
+  line-height: 1.35;
+}
+.kicker::before, .eyebrow::before, .route-label::before {
+  content: '';
+  display: inline-block;
+  width: .42rem;
+  height: .42rem;
+  margin-right: .6rem;
+  vertical-align: .12em;
+  background: var(--accent);
+}
+.kicker.on-dark::before, .eyebrow.on-dark::before,
+.home-hero .kicker::before, .squamish-band .kicker::before { background: #f3c3a4; }
+.page-hd { border-bottom: 5px solid #bd8065; }
+.page-hd h1 { max-width: 16ch; text-wrap: balance; }
+.page-hd p { max-width: 56ch; }
+.card, .plan-list {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--office-shadow);
+}
+.card { border-top: 3px solid var(--forest); }
+.card .flag { font-family: 'Courier Prime', 'American Typewriter', monospace; letter-spacing: .04em; }
+.rates th { font-family: 'Courier Prime', 'American Typewriter', monospace; font-size: .9rem; }
+.rates tr:hover td { background: #e9eee5; }
+.nav-submenu { border-top: 3px solid var(--forest); background: var(--surface); }
+.nav-submenu a + a { border-top: 1px solid #dce0d7; }
+.nav-submenu a:hover, .nav-submenu a:focus-visible { background: #e8eee6; }
+.nav-group[open] > summary { filter: brightness(.97); }
+/* FAQs act like a clear office index; the booking links keep the keycaps. */
+.faq-list { counter-reset: common-faq; }
+.faq-list details { counter-increment: common-faq; }
+.faq-list summary {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 0;
+  padding: 1rem .25rem !important;
+  background: none !important;
+  color: var(--ink) !important;
+  font-family: var(--sans);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
+  text-shadow: none;
+  filter: none;
+  transform: none;
+}
+.faq-list summary::after { margin-left: auto; padding-left: 1rem; }
+.faq-list summary::before {
+  content: counter(common-faq, decimal-leading-zero) !important;
+  display: inline-block;
+  flex: none;
+  width: 2.5rem;
+  margin-right: .8rem;
+  color: var(--forest);
+  font: 700 .88rem/1.4 'Courier Prime', 'American Typewriter', monospace;
+}
+.faq-list summary:hover { color: var(--forest) !important; filter: none; transform: none; }
+.faq-list details[open] { background: #eeefe7; }
+.faq-list details p { padding-left: 3.55rem; }
+/* Photographs are the evidence of the place. Their presentation stays quiet. */
+.photo, .story-photo, .room-photo, .event-feature, .event-print,
+.day-grid img, .contact-grid .photo {
+  box-shadow: var(--office-shadow);
+}
+.booking-route img { box-shadow: 0 9px 20px #20372922; }
+.room { border-bottom-color: var(--rule); }
+.room-copy { border-left: 2px solid #bd8065; }
+.booking-route .route-description { max-width: 30ch; }
+.booking-route:hover .route-title, .booking-route:focus-visible .route-title {
+  filter: brightness(1.035) drop-shadow(0 4px 4px #1c231624);
+}
+/* Ordinary reading links should read as links. Keycaps identify decisions. */
+main .inline-link, main .text-link, main .desk-link {
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 0 0 .12rem !important;
+  background: none !important;
+  color: var(--forest) !important;
+  font-family: var(--sans) !important;
+  font-size: inherit !important;
+  letter-spacing: 0 !important;
+  text-decoration: underline !important;
+  text-decoration-color: #bd8065 !important;
+  text-underline-offset: 5px !important;
+  text-shadow: none !important;
+}
+main .inline-link:hover, main .text-link:hover, main .desk-link:hover {
+  filter: none;
+  transform: none;
+  text-decoration-thickness: 2px !important;
+}
+@media (max-width: 750px) {
+  .room-copy { border-left: 0; border-top: 2px solid #bd8065; }
+  .section-head, .section-heading, .tour-heading, .rooms-intro, .plan-heading, .past-heading { padding-bottom: 1rem; }
+  .faq-list details p { padding-left: .25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .booking-route img, .booking-route .route-title { transition: none !important; }
+}
