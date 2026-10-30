@@ -1,4 +1,3 @@
-/* The key surface is artwork; button legends remain selectable, accessible text. */
 @font-face {
   font-family: 'Courier Prime';
   src: url('../assets/keys/courier-prime-bold.ttf') format('truetype');
@@ -6,75 +5,77 @@
   font-weight: 700;
   font-display: swap;
 }
-:root { --key-ink: #243c30; }
 
-.btn, .nav-cta, .nav-menu summary, .mobile-menu summary,
-.faq-list summary, main a:not(.btn):not(.booking-route):not(:has(img)),
-.booking-route .route-title {
+/* One low-profile key for site actions. Reading links keep their normal link style. */
+:root { --key-ink: #243c30; }
+:is(.btn, .nav-cta, .nav-menu summary, .mobile-menu summary, .booking-route .route-title, .squamish-caption a) {
+  box-sizing: border-box;
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 54px;
   max-width: 100%;
-  min-height: 48px;
-  padding: .52rem 1.12rem .9rem;
-  border: 0;
-  border-radius: 0;
-  background: transparent url('../assets/keys/key-wide.png') center / 100% 100% no-repeat;
-  box-shadow: none;
-  color: var(--key-ink);
-  font-family: 'Courier Prime', 'American Typewriter', monospace;
-  font-size: .94rem;
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -.035em;
+  padding: .72rem 1.4rem;
+  border: 1px solid #9fa7a3 !important;
+  border-radius: 11px !important;
+  background: linear-gradient(160deg, #fff 0%, #f7f8f7 47%, #e1e5e3 100%) !important;
+  background-image: linear-gradient(160deg, #fff 0%, #f7f8f7 47%, #e1e5e3 100%) !important;
+  box-shadow: inset 0 2px 1px #fff, inset 0 -1px 0 #9ca49e, 0 2px 0 #6f7872, 0 5px 10px #12281b24 !important;
+  color: var(--key-ink) !important;
+  font-family: var(--sans), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  font-weight: 750;
+  letter-spacing: -.015em;
+  line-height: 1.2;
   text-align: center;
   text-decoration: none !important;
-  text-shadow: 0 1px 0 #fff8;
+  text-shadow: none;
+  white-space: normal;
   vertical-align: middle;
   cursor: pointer;
-  transition: transform .15s ease, filter .15s ease;
+  filter: none;
+  transform: none;
+  translate: none;
+  transition: background .16s ease, box-shadow .16s ease, transform .16s ease, border-color .16s ease;
 }
-/* Extra layers once covered the homepage hero, so keys have no pseudo-element faces. */
-.btn::before, .nav-cta::before, .nav-menu summary::before, .mobile-menu summary::before,
-.faq-list summary::before,
-main a:not(.btn):not(.booking-route):not(:has(img))::before { content: none; }
-
-.btn:hover, .nav-cta:hover, .nav-menu summary:hover, .mobile-menu summary:hover,
-.faq-list summary:hover,
-main a:not(.btn):not(.booking-route):not(:has(img)):hover,
-.booking-route:hover .route-title, .booking-route:focus-visible .route-title {
-  color: var(--key-ink);
-  background-color: transparent;
-  box-shadow: none;
-  filter: brightness(1.035) drop-shadow(0 4px 4px #1c231624);
-  transform: translateY(-2px);
-  text-decoration: none;
+:is(.btn, .nav-cta, .nav-menu summary, .mobile-menu summary, .booking-route .route-title, .squamish-caption a)::before { content: none; }
+:is(.btn, .nav-cta, .nav-menu summary, .mobile-menu summary, .squamish-caption a):hover,
+.booking-route:hover .route-title,
+.booking-route:focus-visible .route-title {
+  background: linear-gradient(160deg, #fff 0%, #fff 45%, #e8edeb 100%) !important;
+  background-image: linear-gradient(160deg, #fff 0%, #fff 45%, #e8edeb 100%) !important;
+  box-shadow: inset 0 2px 1px #fff, inset 0 -1px 0 #a4ada6, 0 3px 0 #707b73, 0 8px 15px #12281b2c !important;
+  color: var(--key-ink) !important;
+  filter: none;
+  transform: translateY(-1px);
 }
-.btn:active, .nav-cta:active, .nav-menu summary:active, .mobile-menu summary:active,
-.faq-list summary:active,
-main a:not(.btn):not(.booking-route):not(:has(img)):active,
+:is(.btn, .nav-cta, .nav-menu summary, .mobile-menu summary, .squamish-caption a):active,
 .booking-route:active .route-title {
-  filter: brightness(.97);
-  transform: translateY(3px);
+  box-shadow: inset 0 1px 3px #6e79721f, 0 1px 0 #6f7872, 0 2px 4px #12281b1c !important;
+  transform: translateY(2px);
 }
-.btn:focus-visible, .nav-cta:focus-visible, .nav-menu summary:focus-visible,
-.mobile-menu summary:focus-visible, .mobile-menu li a:focus-visible,
-.faq-list summary:focus-visible,
-main a:not(.btn):not(.booking-route):not(:has(img)):focus-visible,
-.footer-column a:focus-visible, .footer-quiet-link:focus-visible {
-  outline: 3px solid #e48963;
-  outline-offset: 3px;
+:is(.btn, .nav-cta, .nav-menu summary, .mobile-menu summary, .squamish-caption a):focus-visible,
+.booking-route:focus-visible,
+.mobile-menu li a:focus-visible,
+.footer-column a:focus-visible,
+.footer-quiet-link:focus-visible {
+  outline: 3px solid #d2734f;
+  outline-offset: 4px;
 }
-.btn { min-height: 96px; padding: 1rem 2.35rem 1.4rem; font-size: 1.25rem; }
-.nav-cta { min-height: 94px; padding: 1rem 2.25rem 1.35rem; font-size: 1.18rem; translate: 0 5px; }
-.nav-menu { gap: .8rem; }
-.nav-inner { height: 98px; gap: 1rem; }
+
+.btn { min-width: 158px; }
+.nav-inner { height: 84px; gap: 1rem; }
+.nav-menu { gap: .7rem; }
 .nav-group { position: relative; }
+.nav-menu summary { min-height: 52px; padding-inline: 1.15rem; white-space: nowrap; list-style: none; }
+.nav-menu summary::-webkit-details-marker,
+.mobile-menu summary::-webkit-details-marker { display: none; }
+.nav-cta { min-height: 52px; padding-inline: 1.3rem; white-space: nowrap; }
 .nav-submenu {
   position: absolute;
   z-index: 110;
-  top: calc(100% - .2rem);
+  top: calc(100% + .4rem);
   left: .25rem;
   min-width: 230px;
   padding: .55rem;
@@ -82,105 +83,34 @@ main a:not(.btn):not(.booking-route):not(:has(img)):focus-visible,
   border: 1px solid #c6c5b9;
   box-shadow: 0 12px 24px #14251c38;
 }
-.nav-submenu a {
-  display: block;
-  padding: .72rem .85rem;
-  color: var(--forest);
-  font-size: 1rem;
-  font-weight: 700;
-  text-decoration: none;
-}
+.nav-submenu a { display: block; padding: .72rem .85rem; color: var(--forest); font-size: 1rem; font-weight: 700; text-decoration: none; }
 .nav-submenu a:hover, .nav-submenu a:focus-visible { background: #e6e9dd; text-decoration: underline; }
-.nav-menu summary {
-  min-height: 76px;
-  padding: .9rem 1.7rem 1.25rem;
-  white-space: nowrap;
-  font-size: 1.14rem;
-  background-image: url('../assets/keys/key-medium.png');
-  list-style: none;
-}
-.nav-menu summary::-webkit-details-marker { display: none; }
 .nav-submenu a[aria-current=page], .mobile-menu li a[aria-current=page] { color: #a14f32; }
-.nav-cta { white-space: nowrap; }
-.mobile-menu summary { min-height: 76px; font-size: 1.14rem; }
-.mobile-menu ul { padding: .85rem; border-radius: 10px; background: #eeeae0; }
+
+.mobile-menu summary { min-height: 52px; padding-inline: 1.1rem; }
+.mobile-menu ul { max-height: min(75vh, 620px); overflow-y: auto; padding: .85rem; border-radius: 10px; background: #eeeae0; }
 .mobile-menu li + li { margin-top: .65rem; }
 .mobile-menu li a { display: block; white-space: normal; }
-.mobile-menu ul { max-height: min(75vh, 620px); overflow-y: auto; }
 .mobile-menu-group { border-bottom: 1px solid #d1d3c8; padding-bottom: .45rem; }
 .mobile-menu-group:last-child { border-bottom: 0; }
 .mobile-menu-group > span { display: block; padding: .35rem .8rem; color: var(--forest); font-size: .76rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
 .mobile-menu-group a { color: var(--ink); font-weight: 650; text-decoration: none; }
-.faq-list summary { display: flex; min-height: 84px; justify-content: space-between; text-align: left; padding: 1rem 2.8rem 1.35rem; font-size: 1.14rem; }
-.faq-list summary::-webkit-details-marker { display: none; }
-.faq-list summary::after { content: '+'; margin-left: 1rem; }
-.faq-list details[open] summary::after { content: '−'; }
-main a:not(.btn):not(.booking-route):not(:has(img)) {
-  min-height: 84px;
-  min-width: 170px;
-  padding: 1rem 2.8rem 1.35rem;
-  font-size: 1.18rem;
-  white-space: normal;
-  background-image: url('../assets/keys/key-medium.png');
-}
+
+.booking-route .route-title { display: flex; width: 100%; min-height: 56px; margin-block: .7rem .35rem; padding: .65rem 1rem; font-size: 1.05rem; }
+.squamish-caption a { width: fit-content; min-width: 0; padding-inline: 1.5rem; }
 .faq-booking-actions { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1rem; }
-.home-hero .hero-buttons .btn-primary,
-.home-hero .hero-copy .hero-buttons a.btn.btn-secondary,
-.visit-actions .btn-primary, .workday-content .btn-primary,
-.footer .footer-actions .btn-gold {
-  background: transparent url('../assets/keys/key-wide.png') center / 100% 100% no-repeat;
-  color: var(--key-ink);
-  border: 0;
-}
-.booking-route .route-title {
-  display: flex;
-  min-height: 96px;
-  padding: 1rem 1.6rem 1.4rem;
-  font-size: 1.24rem;
-  justify-content: center;
-  text-align: center;
-  background-image: url('../assets/keys/key-wide.png');
-}
-/* Page-level colour rules must not replace the photographed key surface. */
-.btn, .nav-cta, .mobile-menu summary,
-.faq-list summary, .booking-route .route-title {
-  background: transparent url('../assets/keys/key-wide.png') center / 100% 100% no-repeat !important;
-  color: var(--key-ink) !important;
-  border: 0 !important;
-}
-.nav-menu summary, main a:not(.btn):not(.booking-route):not(:has(img)) {
-  background: transparent url('../assets/keys/key-medium.png') center / 100% 100% no-repeat !important;
-  color: var(--key-ink) !important;
-  border: 0 !important;
-}
-.nav-menu summary {
-  /* The medium artwork has generous transparent edges; enlarge the visible cap. */
-  background-size: 110% 175% !important;
-}
-main a:not(.btn):not(.booking-route):not(:has(img)) {
-  background-size: 110% 175% !important;
-}
-main .squamish-caption a {
-  min-width: 390px;
-  padding: 1rem 3.5rem 1.4rem !important;
-  font-size: 1.22rem;
-}
-.nav-submenu a[aria-current=page], .mobile-menu li a[aria-current=page] {
-  color: #a14f32 !important;
-}
+
 @media (max-width: 1280px) {
   .nav-menu { display: none; }
   .mobile-menu { display: block; }
   .nav-cta { margin-left: auto; }
-  .nav-cta { translate: none; }
 }
 @media (max-width: 560px) {
   .nav-inner { height: 72px; }
-  .nav-cta { min-height: 72px; padding: .5rem 1.2rem .8rem; }
-  .btn { min-height: 88px; }
-  main .squamish-caption a { min-width: 0; max-width: 100%; padding-inline: 2.7rem !important; }
+  .nav-cta { min-height: 48px; min-width: 0; padding-inline: .95rem; }
+  .btn { min-height: 52px; }
+  .squamish-caption a { max-width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .btn, .nav-cta, .nav-menu summary, .mobile-menu summary, .mobile-menu li a,
-  .faq-list summary, main a:not(.booking-route) { transition: none; }
+  :is(.btn, .nav-cta, .nav-menu summary, .mobile-menu summary, .booking-route .route-title, .squamish-caption a) { transition: none; }
 }

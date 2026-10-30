@@ -49,7 +49,7 @@ main p { max-width: 72ch; }
 .nav-submenu a + a { border-top: 1px solid #dce0d7; }
 .nav-submenu a:hover, .nav-submenu a:focus-visible { background: #e8eee6; }
 .nav-group[open] > summary { filter: brightness(.97); }
-/* FAQs act like a clear office index; the booking links keep the keycaps. */
+/* FAQs act like a clear office index. */
 .faq-list { counter-reset: common-faq; }
 .faq-list details { counter-increment: common-faq; }
 .faq-list summary {
@@ -91,10 +91,7 @@ main p { max-width: 72ch; }
 .room { border-bottom-color: var(--rule); }
 .room-copy { border-left: 2px solid #bd8065; }
 .booking-route .route-description { max-width: 30ch; }
-.booking-route:hover .route-title, .booking-route:focus-visible .route-title {
-  filter: brightness(1.035) drop-shadow(0 4px 4px #1c231624);
-}
-/* Ordinary reading links should read as links. Keycaps identify decisions. */
+/* Ordinary reading links should read as links. Keys identify actions. */
 main .inline-link, main .text-link, main .desk-link {
   min-width: 0 !important;
   min-height: 0 !important;
