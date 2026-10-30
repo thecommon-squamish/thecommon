@@ -68,18 +68,19 @@ main a:not(.btn):not(.booking-route):not(:has(img)):focus-visible,
   outline: 3px solid #e48963;
   outline-offset: 3px;
 }
-.btn, .nav-cta { min-height: 54px; padding: .64rem 1.3rem 1.04rem; }
+.btn { min-height: 72px; padding: 1rem 1.6rem 1.38rem; font-size: 1.08rem; }
+.nav-cta { min-height: 67px; padding: .8rem 1.5rem 1.2rem; font-size: 1.04rem; }
 .nav-menu { gap: .35rem; }
-.nav-inner { gap: 1rem; }
+.nav-inner { height: 98px; gap: 1rem; }
 .nav-menu a {
-  min-height: 44px;
-  padding: .52rem .74rem .86rem;
+  min-height: 67px;
+  padding: .84rem 1.02rem 1.24rem;
   white-space: nowrap;
-  font-size: .82rem;
+  font-size: 1.02rem;
   background-image: url('../assets/keys/key-medium.png');
 }
 .nav-menu a[aria-current=page], .mobile-menu li a[aria-current=page] { color: #a14f32; }
-.nav-cta { white-space: nowrap; }
+.nav-cta { min-height: 67px; white-space: nowrap; }
 .mobile-menu summary { min-height: 44px; }
 .mobile-menu ul { padding: .85rem; border-radius: 10px; background: #eeeae0; }
 .mobile-menu li + li { margin-top: .65rem; }
@@ -110,8 +111,8 @@ main a:not(.btn):not(.booking-route):not(:has(img)),
 .footer .footer-column a, .footer .footer-quiet-link { color: var(--key-ink); }
 .booking-route .route-title {
   display: flex;
-  min-height: 67px;
-  padding: .72rem 1rem 1.12rem;
+  min-height: 76px;
+  padding: .85rem 1rem 1.25rem;
   font-size: clamp(.92rem, 1.3vw, 1.12rem);
   background-image: url('../assets/keys/key-wide.png');
 }
@@ -129,17 +130,22 @@ main a:not(.btn):not(.booking-route):not(:has(img)),
   color: var(--key-ink) !important;
   border: 0 !important;
 }
+.nav-menu a {
+  /* The medium artwork has generous transparent edges; enlarge the visible cap. */
+  background-size: 110% 175% !important;
+}
 .nav-menu a[aria-current=page], .mobile-menu li a[aria-current=page] {
   color: #a14f32 !important;
 }
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
   .nav-menu { display: none; }
   .mobile-menu { display: block; }
   .nav-cta { margin-left: auto; }
 }
 @media (max-width: 560px) {
+  .nav-inner { height: 72px; }
   .nav-cta { min-height: 45px; padding: .49rem .8rem .78rem; }
-  .btn { min-height: 49px; }
+  .btn { min-height: 64px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .btn, .nav-cta, .nav-menu a, .mobile-menu summary, .mobile-menu li a,
