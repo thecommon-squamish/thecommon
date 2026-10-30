@@ -68,8 +68,8 @@ main a:not(.btn):not(.booking-route):not(:has(img)):focus-visible,
   outline: 3px solid #e48963;
   outline-offset: 3px;
 }
-.btn { min-height: 72px; padding: 1rem 1.6rem 1.38rem; font-size: 1.08rem; }
-.nav-cta { min-height: 67px; padding: .8rem 1.5rem 1.2rem; font-size: 1.04rem; }
+.btn { min-height: 88px; padding: 1rem 1.7rem 1.38rem; font-size: 1.08rem; }
+.nav-cta { min-height: 88px; padding: .8rem 1.5rem 1.2rem; font-size: 1.04rem; }
 .nav-menu { gap: .35rem; }
 .nav-inner { height: 98px; gap: 1rem; }
 .nav-menu a {
@@ -80,24 +80,25 @@ main a:not(.btn):not(.booking-route):not(:has(img)):focus-visible,
   background-image: url('../assets/keys/key-medium.png');
 }
 .nav-menu a[aria-current=page], .mobile-menu li a[aria-current=page] { color: #a14f32; }
-.nav-cta { min-height: 67px; white-space: nowrap; }
-.mobile-menu summary { min-height: 44px; }
+.nav-cta { white-space: nowrap; }
+.mobile-menu summary { min-height: 72px; }
 .mobile-menu ul { padding: .85rem; border-radius: 10px; background: #eeeae0; }
 .mobile-menu li + li { margin-top: .65rem; }
-.mobile-menu li a { display: flex; white-space: normal; }
-.faq-list summary { display: flex; justify-content: space-between; text-align: left; padding-right: 1.2rem; }
+.mobile-menu li a { display: flex; min-height: 72px; white-space: normal; }
+.faq-list summary { display: flex; min-height: 72px; justify-content: space-between; text-align: left; padding-right: 1.2rem; }
 .faq-list summary::-webkit-details-marker { display: none; }
 .faq-list summary::after { content: '+'; margin-left: 1rem; }
 .faq-list details[open] summary::after { content: '−'; }
 main a:not(.btn):not(.booking-route):not(:has(img)),
 .footer-column a, .footer-quiet-link {
-  min-height: 37px;
-  padding: .34rem .7rem .62rem;
-  font-size: .84rem;
+  min-height: 67px;
+  padding: .84rem 1.02rem 1.24rem;
+  font-size: 1.02rem;
   white-space: normal;
   background-image: url('../assets/keys/key-medium.png');
 }
 .footer-column a, .footer-quiet-link { align-self: flex-start; border-bottom: 0 !important; }
+.footer-column a { min-width: 180px; }
 .footer-quiet-link span { color: #a14f32 !important; }
 .faq-booking-actions { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1rem; }
 .home-hero .hero-buttons .btn-primary,
@@ -111,12 +112,13 @@ main a:not(.btn):not(.booking-route):not(:has(img)),
 .footer .footer-column a, .footer .footer-quiet-link { color: var(--key-ink); }
 .booking-route .route-title {
   display: flex;
-  min-height: 76px;
+  min-height: 88px;
   padding: .85rem 1rem 1.25rem;
-  font-size: clamp(.92rem, 1.3vw, 1.12rem);
+  font-size: 1.08rem;
+  justify-content: center;
+  text-align: center;
   background-image: url('../assets/keys/key-wide.png');
 }
-.booking-route .coffee-mouse { color: var(--key-ink); }
 /* Page-level colour rules must not replace the photographed key surface. */
 .btn, .nav-cta, .mobile-menu summary, .mobile-menu li a,
 .faq-list summary, .booking-route .route-title {
@@ -134,6 +136,10 @@ main a:not(.btn):not(.booking-route):not(:has(img)),
   /* The medium artwork has generous transparent edges; enlarge the visible cap. */
   background-size: 110% 175% !important;
 }
+main a:not(.btn):not(.booking-route):not(:has(img)),
+.footer-column a, .footer-quiet-link {
+  background-size: 110% 175% !important;
+}
 .nav-menu a[aria-current=page], .mobile-menu li a[aria-current=page] {
   color: #a14f32 !important;
 }
@@ -144,8 +150,8 @@ main a:not(.btn):not(.booking-route):not(:has(img)),
 }
 @media (max-width: 560px) {
   .nav-inner { height: 72px; }
-  .nav-cta { min-height: 45px; padding: .49rem .8rem .78rem; }
-  .btn { min-height: 64px; }
+  .nav-cta { min-height: 68px; padding: .49rem .8rem .78rem; }
+  .btn { min-height: 80px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .btn, .nav-cta, .nav-menu a, .mobile-menu summary, .mobile-menu li a,

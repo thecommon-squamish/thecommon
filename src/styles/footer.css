@@ -6,8 +6,8 @@
 }
 .footer .wrap.footer-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
-  column-gap: clamp(3rem, 8vw, 8rem);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  column-gap: clamp(2rem, 4vw, 4rem);
   row-gap: 4rem;
 }
 .footer-logo { display: inline-block; }
@@ -32,7 +32,7 @@
 .footer .footer-actions .btn-gold { --cap: #f8f5ed; --edge: #d7d1c5; --base: #a39d91; --letter: #244634; background: var(--cap); color: var(--letter); border-color: var(--edge); }
 .footer .footer-quiet-link { color: #f9f1e7; font-weight: 700; border-bottom: 1px solid #d7b19c; padding-bottom: .2rem; }
 .footer-quiet-link span { display: inline-block; margin-left: .3rem; color: #e3b49f; }
-.footer-details { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); padding-top: .4rem; }
+.footer-details { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(1rem, 2vw, 2rem); padding-top: .4rem; }
 .footer-column { display: flex; flex-direction: column; align-items: flex-start; gap: .9rem; }
 .footer-column h3 { color: #e3b49f; font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; margin: 0 0 .5rem; }
 .footer-column a { color: #f4f1e8; font-size: .97rem; line-height: 1.35; border-bottom: 1px solid transparent; }
