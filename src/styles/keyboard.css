@@ -175,27 +175,6 @@ main a:not(.btn):not(.booking-route):not(:has(img)),
   color: var(--key-ink);
   text-shadow: 0 1px 0 #fff9;
 }
-.btn::before,
-.nav-cta::before,
-.nav-menu a::before,
-.mobile-menu summary::before,
-.mobile-menu li a::before,
-.faq-list summary::before,
-main a:not(.btn):not(.booking-route):not(:has(img))::before,
-.footer-column a::before,
-.footer-quiet-link::before,
-.booking-route .route-title::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset: 2px 3px var(--key-depth);
-  border-radius: 7px 7px 5px 5px;
-  background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='.08'/%3E%3C/filter%3E%3Crect width='96' height='96' filter='url(%23n)'/%3E%3C/svg%3E"),
-    linear-gradient(138deg, #fffcf3 0%, #eeeade 45%, #e1ddd1 100%);
-  box-shadow: inset 2px 2px 2px #fff, inset -2px -2px 2px #aca89d, 0 1px 0 #fff8;
-  pointer-events: none;
-}
 .btn:hover,
 .nav-cta:hover,
 .nav-menu a:hover,
@@ -236,3 +215,4 @@ main a:not(.btn):not(.booking-route):not(:has(img)):active,
 }
 .booking-route .route-title { display: flex; min-height: 66px; padding: .7rem 1rem calc(.7rem + var(--key-depth)); }
 .booking-route .coffee-mouse { color: var(--key-ink); }
+
