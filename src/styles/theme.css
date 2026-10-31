@@ -16,23 +16,12 @@ main p { max-width: 72ch; }
   padding-bottom: clamp(1rem, 2vw, 1.5rem);
   border-bottom: 1px solid var(--rule);
 }
-.kicker, .eyebrow, .route-label, .plan-name, .footer-kicker {
+.plan-name {
   font-family: 'Courier Prime', 'American Typewriter', monospace;
   letter-spacing: .065em;
   font-size: .8rem;
   line-height: 1.35;
 }
-.kicker::before, .eyebrow::before, .route-label::before {
-  content: '';
-  display: inline-block;
-  width: .42rem;
-  height: .42rem;
-  margin-right: .6rem;
-  vertical-align: .12em;
-  background: var(--accent);
-}
-.kicker.on-dark::before, .eyebrow.on-dark::before,
-.home-hero .kicker::before, .squamish-band .kicker::before { background: #f3c3a4; }
 .page-hd { border-bottom: 5px solid #bd8065; }
 .page-hd h1 { max-width: 16ch; text-wrap: balance; }
 .page-hd p { max-width: 56ch; }

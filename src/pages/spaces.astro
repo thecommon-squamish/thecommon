@@ -8,12 +8,12 @@ const rooms = [
 ];
 ---
 <Base current="spaces" title="Book a room | The Common Squamish" description="Book the Micro Office, Trailer, or Small Conference Room at The Common in Squamish. Go directly to each room’s availability.">
-  <header class="page-hd"><div class="wrap"><span class="eyebrow on-dark">Book a room</span><h1>Rooms at The Common.</h1><p>Need a quiet hour or a table for the team? Pick the space that works, then choose your time online.</p></div></header>
+  <header class="page-hd"><div class="wrap"><h1>Rooms at The Common.</h1><p>Need a quiet hour or a table for the team? Pick the space that works, then choose your time online.</p></div></header>
   <section class="section light"><div class="wrap"><div class="rooms-intro"><h2>Pick the room that fits.</h2><p>Each room has its own booking page with current availability and prices.</p></div>
-    <div class="room-list">{rooms.map((room) => <article class="room"><div class="room-photo"><img src={room.photo} alt={room.alt} loading="lazy" /></div><div class="room-copy"><span class="kicker">{room.type}</span><h3>{room.name}</h3><p>{room.text}</p><a class="btn btn-primary" href={room.url} target="_blank" rel="noopener noreferrer">Check availability</a></div></article>)}</div>
+    <div class="room-list">{rooms.map((room) => <article class="room"><div class="room-photo"><img src={room.photo} alt={room.alt} loading="lazy" /></div><div class="room-copy"><h3>{room.name}</h3><p>{room.text}</p><a class="btn btn-primary" href={room.url} target="_blank" rel="noopener noreferrer">Check availability</a></div></article>)}</div>
   </div></section>
   <PrivateOfficeFeature />
-  <section class="section warm"><div class="wrap other-options"><div><span class="kicker">Get together</span><h2>Need more than a meeting room?</h2><p>We've made room for talks, film nights, workshops, and Squamish get togethers. Tell us what you have in mind.</p></div><a class="btn btn-secondary" href="/event-space/">See event space</a></div></section>
+  <section class="section warm"><div class="wrap other-options"><div><h2>Need more than a meeting room?</h2><p>We've made room for talks, film nights, workshops, and Squamish get togethers. Tell us what you have in mind.</p></div><a class="btn btn-secondary" href="/event-space/">See event space</a></div></section>
 </Base>
 <style>
   .rooms-intro{margin-bottom:2.5rem}.rooms-intro h2{font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.04em;margin-bottom:.6rem}.rooms-intro p,.other-options p{color:var(--muted)}

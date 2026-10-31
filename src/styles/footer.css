@@ -12,20 +12,12 @@
 }
 .footer-logo { display: inline-block; }
 .footer .footer-logo img { width: auto; height: 35px; }
-.footer-kicker {
-  color: #e3b49f;
-  font-size: .76rem;
-  font-weight: 700;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  margin: 2.6rem 0 .8rem;
-}
 .footer-lead h2 {
   color: #fffaf2;
   font-size: clamp(2.5rem, 4.5vw, 5rem);
   line-height: 1.02;
   letter-spacing: -.055em;
-  margin: 0 0 1.35rem;
+  margin: 2.6rem 0 1.35rem;
 }
 .footer-intro { color: #d2e1d5; font-size: 1.08rem; max-width: 33rem; margin-bottom: 1.7rem; }
 .footer-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.8rem; }
