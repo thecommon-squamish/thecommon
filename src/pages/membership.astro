@@ -23,7 +23,7 @@ const plans = [
   <section class="section light">
     <div class="wrap">
       <div class="membership-intro"><img src="/img/approved/main-workspace.jpg" alt="People working together in The Common" loading="lazy" /><div><h2>A familiar place to land.</h2><p>Come in on the days in your plan, plug into a monitor, and get to know the people who keep showing up beside you.</p></div></div>
-      <div class="plan-heading">
+      <div class="plan-heading" id="monthly-desk-plans">
         <h2>Monthly desk plans</h2>
         <p>Choose the number of days you'll actually use. Plans are billed monthly with a three-month minimum.</p>
       </div>
@@ -57,7 +57,7 @@ const plans = [
 <style>
   .membership-intro{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,5vw,5rem);align-items:center;margin-bottom:4rem}.membership-intro img{width:100%;aspect-ratio:1.6;object-fit:cover}.membership-intro h2{font-size:clamp(2.2rem,4vw,3.6rem);letter-spacing:-.04em;margin:.7rem 0}.membership-intro p{color:var(--muted);font-size:1.08rem}
   .membership-intro img{border:9px solid #fff;box-shadow:17px 17px 0 #d6cbb7,0 22px 34px #192c1e30;transform:rotate(-1deg)}
-  .plan-heading { text-align: center; margin: 0 auto 2.2rem; }
+  .plan-heading { text-align: center; margin: 0 auto 2.2rem; scroll-margin-top: 5rem; }
   .plan-heading h2, .other-options h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; }
   .plan-heading p, .other-options p { font-size: 1.08rem; color: var(--stone); margin-top: 0.8rem; }
   .plan-list { max-width: 760px; margin: 0 auto 2rem; border: 1px solid var(--line); overflow: hidden; background: var(--white); }

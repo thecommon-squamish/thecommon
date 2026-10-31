@@ -88,7 +88,6 @@ main :is(.book-direct, .c-row, .form-intro, .socials, .help) a { margin-block: .
 }
 .nav-submenu a { display: block; padding: .72rem .85rem; color: var(--forest); font-size: 1rem; font-weight: 700; text-decoration: none; }
 .nav-submenu a:hover, .nav-submenu a:focus-visible { background: #e6e9dd; text-decoration: underline; }
-.nav-submenu a[aria-current=page], .mobile-menu li a[aria-current=page] { color: #a14f32; }
 
 .mobile-menu summary { min-height: 52px; padding-inline: 1.1rem; }
 .mobile-menu ul { max-height: min(75vh, 620px); overflow-y: auto; padding: .85rem; border-radius: 10px; background: #eeeae0; }
