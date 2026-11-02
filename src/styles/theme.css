@@ -93,7 +93,6 @@ main p.section-lede.section-lede {
 .booking-route img { box-shadow: 0 9px 20px #20372922; }
 .room { border-bottom-color: var(--rule); }
 .room-copy { border-left: 2px solid #bd8065; }
-.booking-route .route-description { max-width: 30ch; }
 @media (max-width: 750px) {
   .room-copy { border-left: 0; border-top: 2px solid #bd8065; }
   .section-head, .section-heading, .tour-heading, .rooms-intro, .plan-heading, .past-heading { padding-bottom: 1rem; }
