@@ -10,6 +10,7 @@ const {
   title = 'The Common | Coworking in Squamish',
   description = 'Book a desk or private room at The Common, a coworking space and community in downtown Squamish.',
   current = '',
+  noindex = false,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
@@ -33,7 +34,7 @@ const business = {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  {isPreview && <meta name="robots" content="noindex, nofollow" />}
+  {(isPreview || noindex) && <meta name="robots" content="noindex, nofollow" />}
   <link rel="canonical" href={canonical} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />

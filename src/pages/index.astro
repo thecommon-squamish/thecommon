@@ -14,7 +14,7 @@ import Base from '../layouts/Base.astro';
   </header>
 
   <section class="booking-section" id="book"><div class="wrap">
-    <div class="section-heading"><div><h2>What brings you in?</h2></div><p>Come for a workday, get the team together, or make this your regular place.</p></div>
+    <div class="section-heading"><h2>What brings you in?</h2><p>Come for a workday, get the team together, or make this your regular place.</p></div>
     <div class="booking-routes">
       <a class="booking-route" href="/spaces/"><img src="/img/story/conference-second-view.jpg" alt="Small Conference Room at The Common" loading="lazy" /><div class="route-body"><h3 class="route-title">Book a room</h3><span class="route-description">Micro Office, Trailer, or Small Conference Room</span></div></a>
       <a class="booking-route" href="/day-pass/"><img src="/img/approved/hot-desks.jpg" alt="Shared desks at The Common" loading="lazy" /><div class="route-body"><h3 class="route-title">Book a desk</h3><span class="route-description">Find your focus, then take a break with us</span></div></a>
@@ -50,9 +50,9 @@ import Base from '../layouts/Base.astro';
 <style>
   .home-hero{position:relative;min-height:min(850px,90vh);display:flex;align-items:end;isolation:isolate;overflow:hidden;background:#192823;color:#fff;padding:clamp(9rem,15vw,13rem) 0 clamp(3.4rem,6vw,6rem)}.home-hero:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(11,24,21,.78),rgba(11,24,21,.43) 52%,rgba(11,24,21,.03) 87%),linear-gradient(0deg,rgba(11,24,21,.33),transparent 48%)}.hero-copy{width:min(100% - 3rem,1340px);margin:0 auto;position:relative;z-index:2}.hero-copy h1{font-size:clamp(3.35rem,6.1vw,6.5rem);line-height:.99;margin:1.15rem 0 1.45rem;letter-spacing:-.055em;max-width:1000px;text-wrap:balance}.hero-copy h1 em{font-style:normal;color:#f3d6bd}.hero-copy>p:not(.booking-note){font-size:clamp(1.08rem,1.55vw,1.3rem);max-width:590px;line-height:1.5;margin:0}.hero-buttons{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem}.hero-buttons .btn-primary{background:#fff;color:var(--forest)}.hero-buttons .btn-secondary{border-color:#fff;color:#fff;background:rgba(12,28,22,.18)}.booking-note{font-size:.88rem;color:#f3ede5;margin:1rem 0 0}.hero-picture{position:absolute;inset:0;z-index:0;overflow:hidden}.hero-picture img{width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute;inset:0}
   .booking-section{padding:6rem 0 5rem;background:var(--paper)}
-  .section-heading{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:2rem}
+  .section-heading{margin-bottom:2rem}
   .section-heading h2,.story-copy h2,.day-grid h2,.visit-grid h2{font-size:clamp(2.4rem,4vw,4.1rem);line-height:1.05;letter-spacing:-.045em;margin:.65rem 0 0}
-  .section-heading p{max-width:390px;color:var(--muted);font-size:1.03rem}
+  .section-heading p{max-width:620px;color:var(--muted);font-size:1.03rem;margin:.55rem 0 0}
   .booking-routes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.4rem}
   .booking-route{display:block;color:var(--ink);outline-offset:8px}
   .booking-route img{width:100%;aspect-ratio:1.15;object-fit:cover;margin-top:.4rem;transition:transform .22s ease,filter .22s ease}

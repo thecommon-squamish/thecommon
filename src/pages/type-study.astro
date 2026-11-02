@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import '@fontsource-variable/source-serif-4/wght.css';
+import '@fontsource-variable/ibm-plex-sans/wght.css';
+
+const options = [
+  { key: 'editorial', name: 'Warm editorial', note: 'A softer, more personal voice beside the strong headings.' },
+  { key: 'workday', name: 'Clear workday', note: 'A crisp office feel with more weight and a shorter line.' },
+  { key: 'current', name: 'Current style', note: 'The existing type, shown here for comparison.' },
+];
+---
+<Base current="membership" noindex title="Supporting text study | The Common" description="A private design comparison for The Common website.">
+  <header class="page-hd study-hero"><div class="wrap"><h1>Give the words more room.</h1><p>Three ways to treat the short text beneath a heading, shown at the size it would have on the site.</p></div></header>
+  <div class="study-options">
+    {options.map((option) => (
+      <section class={`study-section ${option.key}`} aria-labelledby={`study-${option.key}`}>
+        <div class="wrap">
+          <div class="study-label"><span id={`study-${option.key}`}>{option.name}</span><p>{option.note}</p></div>
+          <div class="study-example">
+            <div class="study-copy"><h2>Monthly desk plans</h2><p>Pick a plan for the days you'll use. Each is billed monthly and has a three-month minimum.</p></div>
+            <div class="study-plan"><span>FLEXI</span><strong>10 days / month</strong><b>$295 <small>/ month</small></b></div>
+          </div>
+          <div class="study-example study-example-secondary"><div class="study-copy"><h2>A familiar place to land.</h2><p>Come in on the days in your plan, plug into a monitor, and get to know the people who keep showing up beside you.</p></div><img src="/img/approved/main-workspace.jpg" alt="People working at The Common" loading="lazy" /></div>
+        </div>
+      </section>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .study-hero h1{max-width:none}.study-hero p{max-width:46ch}.study-section{padding:4.5rem 0 5.5rem;background:var(--paper)}.study-section:nth-child(2){background:var(--paper-warm)}.study-label{display:flex;align-items:baseline;gap:1.4rem;padding-bottom:.8rem;border-bottom:1px solid var(--rule);margin-bottom:3rem}.study-label span{font:700 .88rem/1.3 'Courier Prime','American Typewriter',monospace;color:var(--forest);text-transform:uppercase;letter-spacing:.04em}.study-label p{font-size:.9rem;color:var(--muted);margin:0}.study-example{max-width:760px;margin-inline:auto}.study-copy h2{font-size:clamp(2.4rem,4vw,3rem);letter-spacing:-.04em;margin:0 0 .65rem;line-height:1.1}.study-copy p{max-width:32rem;margin:0 0 1.6rem;color:var(--ink)}.study-plan{border-top:1px solid var(--rule);padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1rem;background:#fff;box-shadow:var(--office-shadow)}.study-plan span{display:block;color:var(--accent);font:700 .72rem/1.2 'Courier Prime',monospace;letter-spacing:.08em}.study-plan strong{font-size:1.25rem}.study-plan b{margin-left:auto;font:700 1.3rem/1.2 Georgia,serif}.study-plan small{font:400 .85rem/1.2 Arial,sans-serif;color:var(--muted)}.study-example-secondary{display:grid;grid-template-columns:.8fr 1.2fr;gap:3rem;align-items:center;margin-top:4rem;max-width:1100px}.study-example-secondary img{width:100%;aspect-ratio:1.6;object-fit:cover;border:9px solid #fff;box-shadow:17px 17px 0 #d6cbb7,0 22px 34px #192c1e30}.study-example-secondary .study-copy p{margin:0}
+  .editorial .study-copy p{font:400 clamp(1.3rem,2vw,1.48rem)/1.46 'Source Serif 4 Variable',Georgia,serif;letter-spacing:-.012em}.editorial .study-copy p:first-line{font-weight:540}.workday .study-copy p{font:450 clamp(1.23rem,1.9vw,1.38rem)/1.47 'IBM Plex Sans Variable','Trebuchet MS',sans-serif;letter-spacing:-.012em}.workday .study-copy{border-left:3px solid #bd8065;padding-left:1.3rem}.current .study-copy p{font:400 1.08rem/1.6 Arial,Helvetica,sans-serif;color:var(--muted)}
+  @media(max-width:700px){.study-section{padding:3.2rem 0 4rem}.study-label{display:block;margin-bottom:2rem}.study-label p{margin-top:.4rem}.study-example-secondary{grid-template-columns:1fr;gap:1.5rem}.study-example-secondary img{order:-1}.study-plan{flex-wrap:wrap}.study-plan b{margin-left:0;width:100%}}
+</style>
