@@ -1,0 +1,11 @@
+name = "the-common-contact"
+main = "index.js"
+compatibility_date = "2026-11-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://www.thecommon.io,https://thecommon.io,https://thecommon-squamish.github.io"
+OFFICERND_ORG_SLUG = "thecommon"
+# Set these after checking the corresponding records in OfficeRnD:
+# OFFICERND_LOCATION_ID = "..."
+# OFFICERND_OPEN_STATUS_ID = "..."
+# OFFICERND_MESSAGE_PROPERTY = "..."
