@@ -3,6 +3,9 @@ import Base from '../layouts/Base.astro';
 // HubSpot 'Ask us anything' form, same portal + form as the current thecommon.io site.
 const HUBSPOT_PORTAL = '4007228';
 const HUBSPOT_FORM = '845c5505-46d2-4244-a0d2-ef7fb8345de9';
+const contactEndpoint = import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT;
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+const useOfficeRndForm = Boolean(contactEndpoint && turnstileSiteKey);
 ---
 <Base current="contact" title="Contact | The Common Squamish" description="The Common is at 38016 Cleveland Avenue, downtown Squamish. Email welcome@thecommon.io or send us a note.">
   <header class="page-hd">
@@ -36,15 +39,83 @@ const HUBSPOT_FORM = '845c5505-46d2-4244-a0d2-ef7fb8345de9';
       <div class="form-card">
         <h3 class="serif">Tell us what you have in mind.</h3>
         <div class="form-intro"><p>Leave a note here or email us directly.</p><a href="mailto:welcome@thecommon.io">Email us directly</a></div>
-        <div class="hbspt-form" id="hubspot-contact-form"></div>
-        <script is:inline src="https://js.hsforms.net/forms/embed/v2.js"></script>
-        <script is:inline define:vars={{ HUBSPOT_PORTAL, HUBSPOT_FORM }}>
-          hbspt.forms.create({ portalId: HUBSPOT_PORTAL, formId: HUBSPOT_FORM, target: '#hubspot-contact-form' });
-        </script>
+        {useOfficeRndForm ? (
+          <form id="contact-form" data-endpoint={contactEndpoint} novalidate>
+            <label for="contact-name">Name <span aria-hidden="true">*</span></label>
+            <input id="contact-name" name="name" autocomplete="name" maxlength="100" required />
+            <label for="contact-email">Email <span aria-hidden="true">*</span></label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required />
+            <label for="contact-phone">Phone <span class="optional">optional</span></label>
+            <input id="contact-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" />
+            <label for="contact-interest">What can we help with? <span aria-hidden="true">*</span></label>
+            <select id="contact-interest" name="interest" required>
+              <option value="">Choose one</option>
+              <option value="Desk or day pass">Desk or day pass</option>
+              <option value="Bookable room">Bookable room</option>
+              <option value="Private office">Private office</option>
+              <option value="Membership">Membership</option>
+              <option value="Event">Event</option>
+              <option value="Something else">Something else</option>
+            </select>
+            <label for="contact-message">Your message <span aria-hidden="true">*</span></label>
+            <textarea id="contact-message" name="message" rows="6" minlength="10" maxlength="4000" required></textarea>
+            <div class="website-field" aria-hidden="true"><label for="contact-website">Website</label><input id="contact-website" name="website" tabindex="-1" autocomplete="off" /></div>
+            <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
+            <p id="contact-status" class="contact-status" role="status" aria-live="polite"></p>
+            <button class="btn" type="submit">Send your message</button>
+          </form>
+        ) : (
+          <div class="hbspt-form" id="hubspot-contact-form"></div>
+        )}
+        {useOfficeRndForm ? (
+          <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+        ) : (
+          <>
+            <script is:inline src="https://js.hsforms.net/forms/embed/v2.js"></script>
+            <script is:inline define:vars={{ HUBSPOT_PORTAL, HUBSPOT_FORM }}>
+              hbspt.forms.create({ portalId: HUBSPOT_PORTAL, formId: HUBSPOT_FORM, target: '#hubspot-contact-form' });
+            </script>
+          </>
+        )}
       </div>
     </div>
   </section>
 </Base>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('#contact-form');
+  if (form) {
+    const status = document.querySelector<HTMLElement>('#contact-status');
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity() || !status || !button) return;
+      const values = Object.fromEntries(new FormData(form).entries());
+      if (!values['cf-turnstile-response']) {
+        status.textContent = 'Please complete the quick verification, then try again.';
+        return;
+      }
+      button.disabled = true;
+      status.textContent = 'Sending your message…';
+      try {
+        const response = await fetch(form.dataset.endpoint || '', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(values),
+        });
+        if (!response.ok) throw new Error('Submission failed');
+        form.reset();
+        status.textContent = 'Thanks for writing. We have your message and will get back to you.';
+      } catch {
+        status.innerHTML = 'That did not go through. Please email <a href="mailto:welcome@thecommon.io">welcome@thecommon.io</a> instead.';
+      } finally {
+        button.disabled = false;
+        const turnstile = (window as typeof window & { turnstile?: { reset: () => void } }).turnstile;
+        turnstile?.reset();
+      }
+    });
+  }
+</script>
 
 <style>
   .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 3.5rem; align-items: start; }
@@ -60,4 +131,15 @@ const HUBSPOT_FORM = '845c5505-46d2-4244-a0d2-ef7fb8345de9';
   .form-card h3 { font-size: 1.5rem; margin-bottom: 1.4rem; }
   .form-intro { color: var(--stone); margin: -0.5rem 0 1.4rem; }.form-intro p{margin:0 0 .5rem}
   .form-intro a { text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
+  #contact-form { display:grid; gap:.55rem; }
+  #contact-form label { font-weight:700; color:var(--forest); margin-top:.55rem; }
+  #contact-form .optional { font-weight:400; color:var(--muted); }
+  #contact-form :is(input, select, textarea) { width:100%; border:1px solid #a8b3aa; border-radius:5px; background:#fff; color:var(--ink); padding:.75rem .85rem; font:inherit; }
+  #contact-form :is(input, select, textarea):focus-visible { outline:3px solid #d2734f; outline-offset:2px; }
+  #contact-form textarea { resize:vertical; }
+  #contact-form .website-field { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+  #contact-form .cf-turnstile { margin-top:1rem; }
+  #contact-form .contact-status { min-height:1.5rem; margin:.25rem 0; color:var(--forest); }
+  #contact-form button { justify-self:start; }
+  #contact-form button:disabled { opacity:.6; cursor:wait; }
 </style>
