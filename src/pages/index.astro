@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+const DAY_PASS = 'https://e-commerce.officernd.com/thecommon/plans/685a4f6beefbc2e8fa8b62f4';
 ---
 <Base current="home" title="The Common | Coworking and bookable rooms in Squamish" description="Find a desk, book a private room, or make The Common your regular workspace in downtown Squamish.">
   <header class="home-hero">
@@ -7,8 +8,8 @@ import Base from '../layouts/Base.astro';
 
       <h1>Connecting people.<br /><em>Creating community.</em></h1>
       <p>Need a few focused hours away from home? A room for your team? A desk to call yours each month? Come work with us in downtown Squamish.</p>
-      <div class="hero-buttons"><a class="btn btn-primary" href="/spaces/">Book a room</a><a class="btn btn-secondary" href="/day-pass/">Book a desk</a></div>
-      <p class="booking-note">Choose a space and see current availability and prices online.</p>
+      <div class="hero-buttons"><a class="btn btn-primary" href={DAY_PASS}>Book a day pass</a><a class="btn btn-secondary" href="/spaces/">Book a room</a></div>
+      <p class="booking-note">Staying just a few hours? Book a desk below has hourly options.</p>
     </div>
     <div class="hero-picture"><img src="/img/approved/hero-wide-working.jpg" alt="Wide view of The Common workspace with people working at the desks" width="1448" height="1086" fetchpriority="high" /></div>
   </header>
@@ -16,8 +17,8 @@ import Base from '../layouts/Base.astro';
   <section class="booking-section" id="book"><div class="wrap">
     <div class="section-heading"><h2>What brings you in?</h2><p class="section-lede">Come for a workday, get the team together, or make this your regular place.</p></div>
     <div class="booking-routes">
-      <a class="booking-route" href="/spaces/"><img src="/img/story/conference-second-view.jpg" alt="Small Conference Room at The Common" loading="lazy" /><div class="route-body"><h3 class="route-title">Book a room</h3><span class="route-description">Micro Office, Trailer, or Small Conference Room</span></div></a>
-      <a class="booking-route" href="/day-pass/"><img src="/img/approved/hot-desks.jpg" alt="Shared desks at The Common" loading="lazy" /><div class="route-body"><h3 class="route-title">Book a desk</h3><span class="route-description">Find your focus, then take a break with us</span></div></a>
+      <a class="booking-route booking-route--desk" href="/day-pass/"><img src="/img/approved/hot-desks.jpg" alt="Shared desks at The Common" loading="lazy" /><div class="route-body"><h3 class="route-title">Book a desk</h3><span class="route-description">Day pass or hourly desk. No membership needed.</span></div></a>
+      <a class="booking-route booking-route--room" href="/spaces/"><img src="/img/approved/trailer.jpg" alt="Table and bench seating inside the Trailer" loading="lazy" /><div class="route-body"><h3 class="route-title">Book a room</h3><span class="route-description">Micro Office, Trailer, or Small Conference Room</span></div></a>
       <a class="booking-route" href="/membership/#private-office"><img src="/img/approved/private-office.jpg" alt="Inside a monthly private office at The Common, with a desk, blue doors and natural light" loading="lazy" /><div class="route-body"><h3 class="route-title">Private Offices</h3><span class="route-description">Your own office at The Common</span></div></a>
       <a class="booking-route" href="/event-space/"><img src="/img/story/event-mixer.jpg" alt="Guests talking at a gathering inspired by The Common" loading="lazy" /><div class="route-body"><h3 class="route-title">Plan an event</h3><span class="route-description">Meetups, workshops, and community events</span></div></a>
     </div>
