@@ -11,6 +11,20 @@
 body { background: var(--paper); }
 main { isolation: isolate; }
 main p { max-width: 72ch; }
+/* Clear workday: a short, useful introduction beneath a section heading. */
+main p.section-lede.section-lede {
+  width: fit-content;
+  max-width: 38ch;
+  margin-top: .75rem;
+  padding-left: 1.25rem;
+  border-left: 3px solid #bd8065;
+  font-family: 'IBM Plex Sans Variable', 'Trebuchet MS', sans-serif !important;
+  font-size: clamp(1.23rem, 1.9vw, 1.38rem) !important;
+  font-weight: 450 !important;
+  line-height: 1.47 !important;
+  letter-spacing: -.012em !important;
+  text-wrap: pretty;
+}
 .section, .booking-section, .home-story, .day-in-space, .tour-section { position: relative; }
 .section-head, .section-heading, .tour-heading, .rooms-intro, .plan-heading, .past-heading {
   padding-bottom: clamp(1rem, 2vw, 1.5rem);
