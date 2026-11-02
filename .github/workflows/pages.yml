@@ -33,7 +33,7 @@ jobs:
         run: |
           find dist -type f \( -name '*.html' -o -name '*.css' -o -name '*.xml' \) -print0 \
             | xargs -0 sed -i \
-              -e 's#\(href\|src\|content\)="/\([^/]\)#\1="/thecommon/\2#g' \
+              -e 's#\(href\|src\|poster\|content\)="/\([^/]\)#\1="/thecommon/\2#g' \
               -e 's#\(href\|src\)="/"#\1="/thecommon/"#g' \
               -e 's#url(/\([^/]\)#url(/thecommon/\1#g' \
               -e "s#url('/\([^/]\)#url('/thecommon/\1#g"

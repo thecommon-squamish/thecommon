@@ -109,9 +109,16 @@ main :is(.book-direct, .c-row, .form-intro, .socials, .help) a { margin-block: .
 }
 @media (max-width: 560px) {
   .nav-inner { height: 72px; }
-  .nav-cta { min-height: 48px; min-width: 0; padding-inline: .95rem; }
+  .nav-inner { gap: .5rem; }
+  .nav-cta, .mobile-menu summary { flex: 0 0 92px; width: 92px; height: 52px; min-height: 52px; padding: .45rem .65rem; }
+  .nav-cta { min-width: 0; }
+  .mobile-menu summary { font-size: .8rem; }
   .btn { min-height: 52px; }
   .squamish-caption a { max-width: 100%; }
+}
+@media (max-width: 360px) {
+  .nav-logo img { height: 28px; }
+  .nav-cta, .mobile-menu summary { flex-basis: 80px; width: 80px; }
 }
 @media (prefers-reduced-motion: reduce) {
   :is(.btn, .nav-cta, .nav-menu summary, .mobile-menu summary, .booking-route .route-title, .squamish-caption a, main .inline-link, main .text-link, main .desk-link, .book-direct a, .c-row a, .form-intro a, .socials a, .help a) { transition: none; }
